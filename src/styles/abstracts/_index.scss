@@ -1,0 +1,5 @@
+// Ponto único de entrada para módulos: @use "abstracts" as *;
+// Só funções e mixins — não gera CSS ao ser importado.
+@forward "functions";
+@forward "mixins";
+@forward "typography";

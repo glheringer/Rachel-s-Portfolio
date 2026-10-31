@@ -1,0 +1,100 @@
+{
+  "font": {
+    "family": {
+      "$type": "fontFamily",
+      "$description": "Famílias vêm do next/font (src/lib/fonts.ts): Manrope em texto e títulos.",
+      "sans": {
+        "$value": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif"
+      },
+      "display": {
+        "$value": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif"
+      },
+      "mono": {
+        "$value": "ui-monospace, SFMono-Regular, Menlo, monospace"
+      }
+    },
+    "size": {
+      "$type": "dimension",
+      "$description": "Tamanhos fluidos: crescem com a tela entre um mínimo e um máximo.",
+      "xs": {
+        "$value": "0.75rem"
+      },
+      "sm": {
+        "$value": "0.875rem"
+      },
+      "md": {
+        "$value": "1rem"
+      },
+      "lg": {
+        "$value": "clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem)"
+      },
+      "xl": {
+        "$value": "clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem)"
+      },
+      "2xl": {
+        "$value": "clamp(1.5rem, 1.25rem + 1vw, 2rem)"
+      },
+      "3xl": {
+        "$value": "clamp(1.875rem, 1.45rem + 1.8vw, 2.75rem)"
+      },
+      "4xl": {
+        "$value": "clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem)"
+      },
+      "5xl": {
+        "$value": "clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem)"
+      },
+      "wordmark": {
+        "$value": "13.5cqi",
+        "$description": "Assinatura gigante no rodapé (referência D.Janat). Em cqi: ocupa a largura do contêiner. Ajuste se o nome mudar de tamanho."
+      }
+    },
+    "weight": {
+      "$type": "fontWeight",
+      "regular": {
+        "$value": 400
+      },
+      "medium": {
+        "$value": 500
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      },
+      "extrabold": {
+        "$value": 800
+      }
+    },
+    "leading": {
+      "$type": "number",
+      "tight": {
+        "$value": 1.08
+      },
+      "snug": {
+        "$value": 1.2
+      },
+      "normal": {
+        "$value": 1.5
+      },
+      "relaxed": {
+        "$value": 1.7
+      }
+    },
+    "tracking": {
+      "$type": "dimension",
+      "tight": {
+        "$value": "-0.025em"
+      },
+      "normal": {
+        "$value": "0"
+      },
+      "wide": {
+        "$value": "0.08em"
+      },
+      "tighter": {
+        "$value": "-0.04em"
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@use "abstracts" as *;
+
+.container {
+  @include container;
+}
+
+.narrow {
+  @include container(narrow);
+}

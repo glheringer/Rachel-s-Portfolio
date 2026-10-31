@@ -1,0 +1,112 @@
+@use "abstracts" as *;
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: z(header);
+  background-color: color-mix(in srgb, #{color(bg)} 82%, transparent);
+  border-bottom: token(border, width-thin) solid color(border);
+  backdrop-filter: blur(14px) saturate(1.4);
+}
+
+.inner {
+  display: flex;
+  gap: space(6);
+  align-items: center;
+  justify-content: space-between;
+  height: token(header, height);
+}
+
+.brand {
+  font-size: font-size(lg);
+  font-weight: font-weight(extrabold);
+  color: color(heading);
+  letter-spacing: token(font, tracking-tight);
+}
+
+.nav {
+  display: none;
+
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.list {
+  display: flex;
+  gap: space(1);
+}
+
+.link {
+  @include text(small);
+  @include transition(color, background-color);
+
+  display: block;
+  padding: space(2) space(4);
+  color: color(fg-muted);
+  border-radius: radius(full);
+
+  @include hover {
+    color: color(heading);
+    background-color: color(surface);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: space(2);
+  align-items: center;
+}
+
+.cta {
+  display: none;
+
+  @include mq(sm) {
+    display: inline-flex;
+  }
+}
+
+// Menu mobile com a Popover API nativa (sem JavaScript).
+.menuButton {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  color: color(heading);
+  border: token(border, width-thin) solid color(border);
+  border-radius: radius(full);
+
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.menu {
+  inset: calc(#{token(header, height)} + #{space(2)}) space(4) auto;
+  width: auto;
+  padding: space(3);
+  color: color(fg);
+  background-color: color(surface-raised);
+  border: token(border, width-thin) solid color(border);
+  border-radius: radius(lg);
+  box-shadow: shadow(lg);
+
+  &::backdrop {
+    background-color: color-mix(in srgb, #{color(inverse-bg)} 30%, transparent);
+  }
+}
+
+.menuList {
+  display: grid;
+  gap: space(1);
+  margin-bottom: space(3);
+
+  .link {
+    padding: space(3) space(4);
+    font-size: font-size(md);
+  }
+}
+
+.menuCta {
+  width: 100%;
+}

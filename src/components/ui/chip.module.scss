@@ -1,0 +1,26 @@
+@use "abstracts" as *;
+
+.chip {
+  @include text(small);
+
+  display: inline-flex;
+  gap: space(2);
+  align-items: center;
+  padding: space(1) space(3);
+  color: color(heading);
+  background-color: color(surface-raised);
+  border: token(border, width-thin) solid color(border);
+  border-radius: radius(full);
+}
+
+.dot {
+  width: space(2);
+  height: space(2);
+  background-color: color(positive);
+  border-radius: radius(full);
+  box-shadow: 0 0 0 3px color-mix(in srgb, #{color(positive)} 20%, transparent);
+}
+
+.label {
+  color: color(fg-muted);
+}

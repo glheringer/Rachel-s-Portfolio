@@ -1,0 +1,58 @@
+@use "abstracts" as *;
+
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  @include text(body);
+
+  display: flex;
+  flex-direction: column;
+  color: color(fg);
+  background-color: color(bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+}
+
+h1,
+h2,
+h3 {
+  color: color(heading);
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  color: color(on-accent);
+  background-color: color(accent);
+}
+
+:focus-visible {
+  @include focus-ring;
+}
+
+// Âncoras não ficam escondidas atrás do header fixo.
+[id] {
+  scroll-margin-top: calc(#{token(header, height)} + #{space(4)});
+}

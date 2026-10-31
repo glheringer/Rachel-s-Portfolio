@@ -1,0 +1,23 @@
+@use "abstracts" as *;
+
+// Rótulo de seção com traço à esquerda (releitura do "|About me|" do D.Janat).
+.eyebrow {
+  @include text(eyebrow);
+
+  display: inline-flex;
+  gap: space(2);
+  align-items: center;
+  color: color(action);
+
+  &::before {
+    width: space(5);
+    height: token(border, width-thick);
+    content: "";
+    background-color: currentcolor;
+    border-radius: radius(full);
+  }
+}
+
+.inverse {
+  color: color(tint-strong);
+}

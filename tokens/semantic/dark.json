@@ -1,0 +1,84 @@
+{
+  "color": {
+    "$type": "color",
+    "$description": "Tokens semânticos — tema escuro. Mesmas chaves em light.json.",
+    "bg": {
+      "$value": "{palette.neutral.950}"
+    },
+    "surface": {
+      "$value": "{palette.neutral.900}"
+    },
+    "surface-raised": {
+      "$value": "{palette.neutral.800}"
+    },
+    "tint": {
+      "$value": "{palette.navy.950}"
+    },
+    "tint-strong": {
+      "$value": "{palette.navy.800}"
+    },
+    "hero-from": {
+      "$value": "{palette.navy.800}"
+    },
+    "hero-to": {
+      "$value": "{palette.neutral.950}"
+    },
+    "hero-line": {
+      "$value": "{palette.navy.700}"
+    },
+    "heading": {
+      "$value": "{palette.neutral.0}"
+    },
+    "fg": {
+      "$value": "{palette.neutral.100}"
+    },
+    "fg-muted": {
+      "$value": "{palette.neutral.400}"
+    },
+    "fg-subtle": {
+      "$value": "{palette.neutral.500}"
+    },
+    "border": {
+      "$value": "{palette.neutral.800}"
+    },
+    "border-strong": {
+      "$value": "{palette.neutral.700}"
+    },
+    "accent": {
+      "$value": "{palette.sky.300}"
+    },
+    "accent-hover": {
+      "$value": "{palette.sky.200}"
+    },
+    "on-accent": {
+      "$value": "{palette.navy.950}"
+    },
+    "action": {
+      "$value": "{palette.blue.400}"
+    },
+    "action-hover": {
+      "$value": "{palette.sky.500}"
+    },
+    "focus": {
+      "$value": "{palette.blue.400}"
+    },
+    "positive": {
+      "$value": "{palette.green.400}"
+    },
+    "inverse-bg": {
+      "$value": "{palette.navy.950}"
+    },
+    "inverse-surface": {
+      "$value": "{palette.navy.900}"
+    },
+    "inverse-fg": {
+      "$value": "{palette.neutral.0}"
+    },
+    "inverse-muted": {
+      "$value": "{palette.navy.200}"
+    },
+    "inverse-border": {
+      "$value": "{palette.navy.800}"
+    }
+  }
+}

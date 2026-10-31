@@ -1,0 +1,20 @@
+@use "abstracts" as *;
+
+.skipLink {
+  @include visually-hidden;
+
+  &:focus {
+    position: fixed;
+    top: space(4);
+    left: space(4);
+    z-index: z(overlay);
+    width: auto;
+    height: auto;
+    padding: space(2) space(4);
+    margin: 0;
+    clip-path: none;
+    color: color(on-accent);
+    background-color: color(accent);
+    border-radius: radius(sm);
+  }
+}

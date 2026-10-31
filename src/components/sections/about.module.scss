@@ -1,0 +1,38 @@
+@use "abstracts" as *;
+
+.grid {
+  display: grid;
+  gap: space(12);
+
+  @include mq(lg) {
+    grid-template-columns: 1fr 1.3fr;
+    gap: space(16);
+    align-items: start;
+  }
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: space(3);
+}
+
+.body {
+  display: grid;
+  gap: space(6);
+  justify-items: start;
+}
+
+.statement {
+  @include text(h3);
+
+  font-size: font-size("2xl");
+}
+
+.paragraphs {
+  @include text(lead);
+
+  display: grid;
+  gap: space(4);
+  color: color(fg-muted);
+}

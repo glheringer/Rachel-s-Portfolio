@@ -1,0 +1,62 @@
+@use "abstracts" as *;
+
+.header {
+  display: grid;
+  gap: space(6);
+  margin-bottom: space(12);
+
+  @include mq(md) {
+    margin-bottom: space(16);
+  }
+}
+
+.split {
+  @include mq(lg) {
+    grid-template-columns: 1.1fr 1fr;
+    gap: space(16);
+    align-items: end;
+  }
+}
+
+.center {
+  justify-items: center;
+  text-align: center;
+}
+
+.titleGroup {
+  display: grid;
+  gap: space(4);
+}
+
+.title {
+  @include text(h2);
+
+  max-width: 20ch;
+}
+
+.aside {
+  display: grid;
+  gap: space(6);
+  justify-items: start;
+
+  .center & {
+    justify-items: center;
+  }
+}
+
+.description {
+  @include text(lead);
+
+  max-width: token(container, narrow);
+  color: color(fg-muted);
+}
+
+.inverse {
+  .title {
+    color: color(inverse-fg);
+  }
+
+  .description {
+    color: color(inverse-muted);
+  }
+}

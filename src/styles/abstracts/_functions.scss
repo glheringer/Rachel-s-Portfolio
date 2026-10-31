@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "../tokens/maps" as t;
+
+/// Lê um design token como variável CSS: token(space, 4) → var(--space-4).
+/// Quebra a compilação se o token não existir em tokens/.
+@function token($group, $name) {
+  $group: "#{$group}";
+  $name: "#{$name}";
+
+  @if not map.has-key(t.$tokens, $group) {
+    @error "Grupo de token desconhecido: `#{$group}`.";
+  }
+
+  @if not map.has-key(map.get(t.$tokens, $group), $name) {
+    @error "Token desconhecido: `#{$group}.#{$name}`. Veja os arquivos em tokens/.";
+  }
+
+  @return var(--#{$group}-#{$name});
+}
+
+// Atalhos para os grupos mais usados.
+@function space($step) {
+  @return token(space, $step);
+}
+
+@function color($name) {
+  @return token(color, $name);
+}
+
+@function radius($name) {
+  @return token(radius, $name);
+}
+
+@function font-size($name) {
+  @return token(font, size-#{$name});
+}
+
+@function font-weight($name) {
+  @return token(font, weight-#{$name});
+}
+
+@function duration($name) {
+  @return token(duration, $name);
+}
+
+@function ease($name) {
+  @return token(ease, $name);
+}
+
+@function z($name) {
+  @return token(z, $name);
+}
+
+@function shadow($name) {
+  @return token(shadow, $name);
+}

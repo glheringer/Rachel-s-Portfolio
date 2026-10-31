@@ -1,0 +1,19 @@
+@use "abstracts" as *;
+
+.stat {
+  display: grid;
+  gap: space(1);
+}
+
+.value {
+  @include text(stat);
+
+  margin-top: space(4);
+  color: color(heading);
+}
+
+.label {
+  @include text(small);
+
+  color: color(fg-muted);
+}

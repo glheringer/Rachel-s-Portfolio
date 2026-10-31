@@ -1,0 +1,85 @@
+@use "sass:map";
+@use "../tokens/maps" as t;
+@use "functions" as *;
+
+/// Mobile-first: aplica a partir do breakpoint (sm, md, lg, xl).
+@mixin mq($breakpoint) {
+  @if not map.has-key(t.$breakpoints, "#{$breakpoint}") {
+    @error "Breakpoint desconhecido: `#{$breakpoint}`.";
+  }
+
+  @media (width >= map.get(t.$breakpoints, "#{$breakpoint}")) {
+    @content;
+  }
+}
+
+/// Hover só em dispositivos que têm hover (evita "hover preso" no toque).
+@mixin hover {
+  @media (hover: hover) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+@mixin motion-safe {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin transition($properties...) {
+  transition-property: $properties;
+  transition-duration: duration(base);
+  transition-timing-function: ease(standard);
+}
+
+@mixin container($size: max) {
+  width: 100%;
+  max-width: token(container, $size);
+  margin-inline: auto;
+  padding-inline: token(container, gutter);
+}
+
+@mixin focus-ring {
+  outline: token(border, width-thick) solid color(focus);
+  outline-offset: 3px;
+}
+
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/// Card que "levanta" no hover (referência MediSync).
+@mixin lift {
+  @include motion-safe {
+    transition:
+      translate duration(base) ease(out),
+      box-shadow duration(base) ease(out);
+  }
+
+  @include hover {
+    box-shadow: shadow(md);
+    translate: 0 -2px;
+  }
+}
+
+/// Fundo em gradiente azul-céu com linhas verticais sutis (referência D.Janat).
+@mixin sky-panel {
+  background-color: color(hero-to);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      color-mix(in srgb, #{color(hero-line)} 35%, transparent) 0 1px,
+      transparent 1px 96px
+    ),
+    linear-gradient(180deg, color(hero-from), color(hero-to));
+}

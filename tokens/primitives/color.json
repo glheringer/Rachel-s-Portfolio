@@ -1,0 +1,53 @@
+{
+  "palette": {
+    "$type": "color",
+    "$description": "Paleta bruta. Referências: navy (ProCares), sky (D.Janat), blue (MediSync). Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
+    "navy": {
+      "50": { "$value": "#eef3fb" },
+      "100": { "$value": "#d9e4f5" },
+      "200": { "$value": "#b3c8ea" },
+      "300": { "$value": "#7f9fd6" },
+      "400": { "$value": "#4c76bf" },
+      "500": { "$value": "#2654a3" },
+      "600": { "$value": "#163f87" },
+      "700": { "$value": "#123a80" },
+      "800": { "$value": "#0e3170" },
+      "900": { "$value": "#092862" },
+      "950": { "$value": "#061a40" }
+    },
+    "sky": {
+      "50": { "$value": "#f3faff" },
+      "100": { "$value": "#e1f3fe" },
+      "200": { "$value": "#ccecff" },
+      "300": { "$value": "#b3e2fd" },
+      "400": { "$value": "#a0dafd" },
+      "500": { "$value": "#6cc4fa" },
+      "600": { "$value": "#2fa6ee" }
+    },
+    "blue": {
+      "400": { "$value": "#3d95fa" },
+      "500": { "$value": "#0078f8" },
+      "600": { "$value": "#0062cc" },
+      "700": { "$value": "#004fa6" }
+    },
+    "neutral": {
+      "0": { "$value": "#ffffff" },
+      "25": { "$value": "#fafbfc" },
+      "50": { "$value": "#f6f7f9" },
+      "100": { "$value": "#eef0f3" },
+      "200": { "$value": "#e2e5ea" },
+      "300": { "$value": "#cdd2da" },
+      "400": { "$value": "#9aa3b2" },
+      "500": { "$value": "#6b7587" },
+      "600": { "$value": "#4b5466" },
+      "700": { "$value": "#343b4a" },
+      "800": { "$value": "#1f2532" },
+      "900": { "$value": "#121722" },
+      "950": { "$value": "#0a0e17" }
+    },
+    "green": {
+      "400": { "$value": "#4ade80" },
+      "500": { "$value": "#16a34a" }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+@use "abstracts" as *;
+
+.list {
+  display: grid;
+  gap: space(3);
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.item {
+  background-color: color(surface-raised);
+  border: token(border, width-thin) solid color(border);
+  border-radius: radius(lg);
+
+  @include transition(border-color, box-shadow);
+
+  &[open] {
+    border-color: color(border-strong);
+    box-shadow: shadow(md);
+  }
+}
+
+.question {
+  display: flex;
+  gap: space(4);
+  align-items: center;
+  justify-content: space-between;
+  padding: space(5) space(6);
+  font-weight: font-weight(bold);
+  color: color(heading);
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  color: color(action);
+  background-color: color(tint);
+  border-radius: radius(full);
+
+  @include motion-safe {
+    transition: rotate duration(base) ease(out);
+  }
+
+  .item[open] & {
+    rotate: 45deg;
+  }
+}
+
+.answer {
+  padding: 0 space(6) space(6);
+  color: color(fg-muted);
+}

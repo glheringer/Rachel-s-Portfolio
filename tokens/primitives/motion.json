@@ -1,0 +1,36 @@
+{
+  "duration": {
+    "$type": "duration",
+    "fast": {
+      "$value": "150ms"
+    },
+    "base": {
+      "$value": "250ms"
+    },
+    "slow": {
+      "$value": "600ms"
+    }
+  },
+  "ease": {
+    "$type": "cubicBezier",
+    "standard": {
+      "$value": "cubic-bezier(0.2, 0, 0, 1)"
+    },
+    "out": {
+      "$value": "cubic-bezier(0.22, 1, 0.36, 1)"
+    }
+  },
+  "shadow": {
+    "$type": "shadow",
+    "$description": "Sombras suaves com leve tom azul-marinho.",
+    "sm": {
+      "$value": "0 1px 2px rgb(9 40 98 / 0.06)"
+    },
+    "md": {
+      "$value": "0 12px 32px -12px rgb(9 40 98 / 0.18)"
+    },
+    "lg": {
+      "$value": "0 24px 60px -20px rgb(9 40 98 / 0.28)"
+    }
+  }
+}

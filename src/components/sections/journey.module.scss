@@ -1,0 +1,86 @@
+@use "abstracts" as *;
+
+.grid {
+  display: grid;
+  gap: space(10);
+
+  @include mq(lg) {
+    grid-template-columns: 1fr 1.6fr;
+    gap: space(16);
+  }
+}
+
+// Lista no estilo dos itens de agenda do dashboard (referência MediSync).
+.list {
+  display: grid;
+  gap: space(3);
+}
+
+.item {
+  flex-direction: row;
+  gap: space(4);
+  align-items: center;
+  padding: space(4);
+}
+
+.text {
+  display: grid;
+  flex: 1;
+  gap: space(1);
+}
+
+.title {
+  font-weight: font-weight(bold);
+  color: color(heading);
+}
+
+.place {
+  font-size: font-size(sm);
+  color: color(fg-muted);
+}
+
+.period {
+  @include text(small);
+
+  padding: space(1) space(3);
+  font-variant-numeric: tabular-nums;
+  color: color(action);
+  white-space: nowrap;
+  background-color: color(tint);
+  border-radius: radius(full);
+}
+
+.extras {
+  display: grid;
+  gap: space(10);
+  margin-top: space(16);
+
+  @include mq(lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: space(12);
+  }
+}
+
+.subheading {
+  @include text(h3);
+
+  margin-bottom: space(5);
+}
+
+.awards {
+  display: grid;
+  gap: space(3);
+}
+
+.award {
+  flex-direction: row;
+  gap: space(4);
+  align-items: center;
+  padding: space(4);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+}

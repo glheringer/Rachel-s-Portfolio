@@ -1,0 +1,45 @@
+@use "abstracts" as *;
+
+.list {
+  display: grid;
+  gap: space(4);
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  height: 100%;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2);
+  align-items: center;
+}
+
+.year {
+  @include text(small);
+
+  padding: space(1) space(3);
+  font-variant-numeric: tabular-nums;
+  color: color(on-accent);
+  background-color: color(accent);
+  border-radius: radius(full);
+}
+
+.title {
+  font-size: font-size(md);
+  font-weight: font-weight(bold);
+  line-height: token(font, leading-snug);
+  color: color(heading);
+}
+
+.journal {
+  margin-top: auto;
+  font-size: font-size(sm);
+  font-style: italic;
+  color: color(fg-muted);
+}

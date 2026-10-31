@@ -1,0 +1,73 @@
+@use "abstracts" as *;
+
+.section {
+  padding-block: space(16) space(20);
+
+  @include mq(md) {
+    padding-block: space(24) space(32);
+  }
+}
+
+// Bloco de CTA escuro, fechando a página antes do rodapé.
+.panel {
+  display: grid;
+  gap: space(10);
+  padding: space(10) space(6);
+  color: color(inverse-fg);
+  background-color: color(inverse-bg);
+  border-radius: radius(xl);
+
+  @include mq(md) {
+    padding: space(16) space(12);
+  }
+
+  @include mq(lg) {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+  }
+}
+
+.intro {
+  display: grid;
+  gap: space(5);
+  justify-items: start;
+}
+
+.title {
+  @include text(h2);
+
+  color: color(inverse-fg);
+}
+
+.text {
+  @include text(lead);
+
+  color: color(inverse-muted);
+}
+
+.channels {
+  display: grid;
+  gap: space(3);
+}
+
+.channel {
+  flex-direction: row;
+  gap: space(4);
+  align-items: center;
+  padding: space(4);
+}
+
+.label {
+  font-size: font-size(xs);
+  color: color(inverse-muted);
+}
+
+.value {
+  font-weight: font-weight(bold);
+  color: color(inverse-fg);
+  overflow-wrap: anywhere;
+}
+
+.placeholder {
+  color: color(inverse-muted);
+}

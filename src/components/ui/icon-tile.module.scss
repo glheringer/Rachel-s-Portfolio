@@ -1,0 +1,32 @@
+@use "abstracts" as *;
+
+// Ícone em quadrado arredondado (referência MediSync).
+.tile {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: radius(md);
+}
+
+.tint {
+  color: color(action);
+  background-color: color(tint);
+}
+
+.accent {
+  color: color(on-accent);
+  background-color: color(accent);
+}
+
+.raised {
+  color: color(action);
+  background-color: color(surface-raised);
+  box-shadow: shadow(sm);
+}
+
+.inverse {
+  color: color(tint-strong);
+  background-color: color(inverse-bg);
+}

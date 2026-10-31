@@ -1,0 +1,100 @@
+@use "abstracts" as *;
+
+// Botão em pílula com seta num círculo (referência D.Janat).
+.button {
+  @include text(small);
+
+  display: inline-flex;
+  gap: space(3);
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: space(1) space(1) space(1) space(5);
+  font-weight: font-weight(semibold);
+  white-space: nowrap;
+  border: token(border, width-thin) solid transparent;
+  border-radius: radius(full);
+
+  @include motion-safe {
+    transition:
+      background-color duration(fast) ease(standard),
+      color duration(fast) ease(standard),
+      border-color duration(fast) ease(standard);
+  }
+}
+
+.noIcon {
+  padding-inline: space(6);
+}
+
+.lg {
+  min-height: 3.5rem;
+  font-size: font-size(md);
+}
+
+.primary {
+  color: color(on-accent);
+  background-color: color(accent);
+
+  @include hover {
+    background-color: color(accent-hover);
+  }
+}
+
+.secondary {
+  color: color(heading);
+  background-color: color(surface-raised);
+  border-color: color(border);
+
+  @include hover {
+    border-color: color(border-strong);
+  }
+}
+
+.inverse {
+  color: color(accent);
+  background-color: color(inverse-fg);
+
+  @include hover {
+    background-color: color(tint);
+  }
+}
+
+.icon {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: radius(full);
+
+  .lg & {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .primary & {
+    color: color(accent);
+    background-color: color(on-accent);
+  }
+
+  .secondary & {
+    color: color(on-accent);
+    background-color: color(accent);
+  }
+
+  .inverse & {
+    color: color(inverse-fg);
+    background-color: color(accent);
+  }
+
+  svg {
+    @include motion-safe {
+      transition: translate duration(base) ease(out);
+    }
+  }
+
+  .button:hover & svg {
+    translate: 2px 0;
+  }
+}

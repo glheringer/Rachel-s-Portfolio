@@ -1,0 +1,91 @@
+@use "sass:map";
+@use "functions" as *;
+
+/// Estilos de texto do site, montados a partir dos tokens de fonte.
+/// Uso: @include text(h2);
+$text-styles: (
+  display: (
+    family: display,
+    size: 5xl,
+    weight: bold,
+    leading: tight,
+    tracking: tighter,
+  ),
+  h1: (
+    family: display,
+    size: 4xl,
+    weight: bold,
+    leading: tight,
+    tracking: tight,
+  ),
+  h2: (
+    family: display,
+    size: 3xl,
+    weight: bold,
+    leading: tight,
+    tracking: tight,
+  ),
+  h3: (
+    family: display,
+    size: xl,
+    weight: bold,
+    leading: snug,
+    tracking: tight,
+  ),
+  lead: (
+    family: sans,
+    size: lg,
+    weight: regular,
+    leading: relaxed,
+    tracking: normal,
+  ),
+  body: (
+    family: sans,
+    size: md,
+    weight: regular,
+    leading: relaxed,
+    tracking: normal,
+  ),
+  small: (
+    family: sans,
+    size: sm,
+    weight: medium,
+    leading: normal,
+    tracking: normal,
+  ),
+  eyebrow: (
+    family: sans,
+    size: sm,
+    weight: semibold,
+    leading: normal,
+    tracking: normal,
+  ),
+  stat: (
+    family: display,
+    size: 3xl,
+    weight: extrabold,
+    leading: tight,
+    tracking: tight,
+  ),
+  wordmark: (
+    family: display,
+    size: wordmark,
+    weight: extrabold,
+    leading: tight,
+    tracking: tighter,
+  ),
+);
+
+@mixin text($style) {
+  @if not map.has-key($text-styles, $style) {
+    @error "Estilo de texto desconhecido: `#{$style}`. Opções: #{map.keys($text-styles)}.";
+  }
+
+  $s: map.get($text-styles, $style);
+
+  font-family: token(font, family-#{map.get($s, family)});
+  font-size: font-size(map.get($s, size));
+  font-weight: font-weight(map.get($s, weight));
+  line-height: token(font, leading-#{map.get($s, leading)});
+  letter-spacing: token(font, tracking-#{map.get($s, tracking)});
+}

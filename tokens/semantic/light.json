@@ -1,0 +1,84 @@
+{
+  "color": {
+    "$type": "color",
+    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json.",
+    "bg": {
+      "$value": "{palette.neutral.0}"
+    },
+    "surface": {
+      "$value": "{palette.neutral.50}"
+    },
+    "surface-raised": {
+      "$value": "{palette.neutral.0}"
+    },
+    "tint": {
+      "$value": "{palette.sky.100}"
+    },
+    "tint-strong": {
+      "$value": "{palette.sky.300}"
+    },
+    "hero-from": {
+      "$value": "{palette.sky.400}"
+    },
+    "hero-to": {
+      "$value": "{palette.sky.50}"
+    },
+    "hero-line": {
+      "$value": "{palette.neutral.0}"
+    },
+    "heading": {
+      "$value": "{palette.navy.900}"
+    },
+    "fg": {
+      "$value": "{palette.neutral.900}"
+    },
+    "fg-muted": {
+      "$value": "{palette.neutral.600}"
+    },
+    "fg-subtle": {
+      "$value": "{palette.neutral.500}"
+    },
+    "border": {
+      "$value": "{palette.neutral.200}"
+    },
+    "border-strong": {
+      "$value": "{palette.neutral.300}"
+    },
+    "accent": {
+      "$value": "{palette.navy.900}"
+    },
+    "accent-hover": {
+      "$value": "{palette.navy.700}"
+    },
+    "on-accent": {
+      "$value": "{palette.neutral.0}"
+    },
+    "action": {
+      "$value": "{palette.blue.500}"
+    },
+    "action-hover": {
+      "$value": "{palette.blue.600}"
+    },
+    "focus": {
+      "$value": "{palette.blue.500}"
+    },
+    "positive": {
+      "$value": "{palette.green.500}"
+    },
+    "inverse-bg": {
+      "$value": "{palette.navy.950}"
+    },
+    "inverse-surface": {
+      "$value": "{palette.navy.900}"
+    },
+    "inverse-fg": {
+      "$value": "{palette.neutral.0}"
+    },
+    "inverse-muted": {
+      "$value": "{palette.navy.200}"
+    },
+    "inverse-border": {
+      "$value": "{palette.navy.800}"
+    }
+  }
+}
