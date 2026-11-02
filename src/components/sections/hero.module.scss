@@ -1,45 +1,27 @@
 @use "abstracts" as *;
 
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    translate: 0 space(4);
-  }
-}
-
-@keyframes rise {
-  from {
-    translate: 0 space(3);
-  }
-}
-
+// Campo no tom do fundo da foto. O traçado de capnografia corre na base,
+// de ponta a ponta, e o retrato em arco fica de pé sobre a linha.
 .hero {
-  padding-top: space(4);
-
-  @include mq(md) {
-    padding-top: space(6);
-  }
+  position: relative;
+  overflow: hidden;
+  background-color: color(field);
 }
 
-// Painel azul-céu com cantos arredondados (referência D.Janat).
-.panel {
-  @include sky-panel;
-
+.inner {
   display: grid;
-  gap: space(16);
-  padding: space(12) space(6) space(16);
-  overflow: hidden;
-  border-radius: radius(xl);
+  gap: space(12);
+  padding-top: space(12);
 
   @include mq(md) {
-    padding: space(16) space(12);
+    padding-top: space(16);
   }
 
   @include mq(lg) {
-    grid-template-columns: 1.15fr 1fr;
+    // 60/40: no desktop o nome cabe em duas linhas.
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
     gap: space(12);
-    align-items: center;
-    padding: space(20) space(16);
+    align-items: end;
   }
 }
 
@@ -47,25 +29,27 @@
   display: grid;
   gap: space(6);
   justify-items: start;
-}
 
-.chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: space(2);
+  @include mq(lg) {
+    align-self: center;
 
-  @include motion-safe {
-    animation: fade-up duration(slow) ease(out) both;
+    // Folga para o traçado não encostar nos botões.
+    padding-bottom: space(16);
   }
 }
 
-// O h1 nunca começa invisível: não atrasa o LCP nem some sem JS.
 .title {
   @include text(display);
+}
 
-  @include motion-safe {
-    animation: rise duration(slow) ease(out) both;
-  }
+.role {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(2) space(4);
+  align-items: center;
+  font-size: font-size(lg);
+  font-weight: font-weight(medium);
+  color: color(heading);
 }
 
 .lead {
@@ -82,41 +66,21 @@
   margin-top: space(2);
 }
 
-.lead,
-.actions,
-.highlights {
-  @include motion-safe {
-    animation: fade-up duration(slow) ease(out) 120ms both;
+.portrait {
+  position: relative;
+  z-index: z(raised);
+  justify-self: center;
+  width: min(100%, 20rem);
+
+  @include mq(lg) {
+    justify-self: end;
+    width: 100%;
+    max-width: 26rem;
   }
 }
 
-// Trio de diferenciais (referência ProCares).
-.highlights {
-  display: grid;
-  gap: space(2);
-  width: 100%;
-  margin-top: space(6);
-  font-size: font-size(sm);
-  font-weight: font-weight(semibold);
-  color: color(heading);
-
-  @include mq(sm) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.highlight {
-  display: flex;
-  gap: space(3);
-  align-items: center;
-  padding: space(3);
-  background-color: color-mix(in srgb, #{color(surface-raised)} 70%, transparent);
-  border: token(border, width-thin) solid color-mix(in srgb, #{color(bg)} 80%, transparent);
-  border-radius: radius(md);
-  backdrop-filter: blur(8px);
-
-  @include mq(sm) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+.trace {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }

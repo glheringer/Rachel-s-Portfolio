@@ -1,7 +1,7 @@
 {
   "palette": {
     "$type": "color",
-    "$description": "Paleta bruta. Referências: navy (ProCares), sky (D.Janat), blue (MediSync). Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
+    "$description": "Paleta bruta. Referências: navy (ProCares), sky (D.Janat), blue (MediSync), linen (tons de linho de um portfólio indicado pelo cliente — rosemaryvidal.com.br). Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
     "navy": {
       "50": { "$value": "#eef3fb" },
       "100": { "$value": "#d9e4f5" },
@@ -44,6 +44,13 @@
       "800": { "$value": "#1f2532" },
       "900": { "$value": "#121722" },
       "950": { "$value": "#0a0e17" }
+    },
+    "linen": {
+      "50": { "$value": "#fffdfb" },
+      "100": { "$value": "#faf6f2" },
+      "200": { "$value": "#f4ece6" },
+      "300": { "$value": "#e6d6cc" },
+      "400": { "$value": "#d9c2b5" }
     },
     "green": {
       "400": { "$value": "#4ade80" },

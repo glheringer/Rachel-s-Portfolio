@@ -1,0 +1,21 @@
+@use "abstracts" as *;
+
+@keyframes sweep {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  to {
+    clip-path: inset(0);
+  }
+}
+
+.trace {
+  display: block;
+  color: color(action);
+
+  // Velocidade constante, como a varredura de um monitor.
+  @include motion-safe {
+    animation: sweep 2.8s linear 0.2s both;
+  }
+}

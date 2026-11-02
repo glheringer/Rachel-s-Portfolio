@@ -1,37 +1,13 @@
 @use "abstracts" as *;
 
-// Foto com órbita tracejada (referência ProCares) e cartão flutuante (MediSync).
+// Retrato em arco: topo em semicírculo, base reta para "pisar" no traçado.
+// Numa proporção 4:5, metade da largura equivale a 40% da altura.
 .portrait {
   position: relative;
-  width: min(100%, 26rem);
   aspect-ratio: 4 / 5;
-  margin-inline: auto;
-}
-
-.orbit {
-  position: absolute;
-  inset: -6% -8%;
-  border: token(border, width-thick) dashed color-mix(in srgb, #{color(action)} 45%, transparent);
-  border-radius: 46% 54% 42% 58% / 52% 44% 56% 48%;
-
-  @include motion-safe {
-    animation: spin 60s linear infinite;
-  }
-}
-
-@keyframes spin {
-  to {
-    rotate: 1turn;
-  }
-}
-
-.frame {
-  position: relative;
-  height: 100%;
   overflow: hidden;
-  background: linear-gradient(160deg, color(tint-strong), color(tint));
-  border-radius: radius(xl);
-  box-shadow: shadow(lg);
+  background-color: color(tint-strong);
+  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
 }
 
 .image {
@@ -44,37 +20,6 @@
   place-items: center;
   height: 100%;
   font-size: font-size("5xl");
-  font-weight: font-weight(extrabold);
-  color: color-mix(in srgb, #{color(heading)} 25%, transparent);
-  letter-spacing: token(font, tracking-tighter);
-}
-
-.badge {
-  position: absolute;
-  bottom: space(6);
-  left: calc(-1 * #{space(4)});
-  display: flex;
-  gap: space(3);
-  align-items: center;
-  max-width: 16rem;
-  padding: space(3) space(4) space(3) space(3);
-  background-color: color(surface-raised);
-  border-radius: radius(md);
-  box-shadow: shadow(lg);
-
-  @include mq(lg) {
-    left: calc(-1 * #{space(10)});
-  }
-}
-
-.badgeTitle {
-  @include text(small);
-
   font-weight: font-weight(bold);
-  color: color(heading);
-}
-
-.badgeText {
-  font-size: font-size(xs);
-  color: color(fg-muted);
+  color: color-mix(in srgb, #{color(heading)} 35%, transparent);
 }

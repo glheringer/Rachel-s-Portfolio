@@ -18,6 +18,10 @@
     },
     "out": {
       "$value": "cubic-bezier(0.22, 1, 0.36, 1)"
+    },
+    "draw": {
+      "$value": "cubic-bezier(0.6, 0, 0.2, 1)",
+      "$description": "Traço que se desenha/recolhe (sublinhado do menu). Referência: rosemaryvidal.com.br."
     }
   },
   "shadow": {

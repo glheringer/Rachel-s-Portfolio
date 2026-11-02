@@ -11,20 +11,14 @@
     "surface-raised": {
       "$value": "{palette.neutral.800}"
     },
+    "field": {
+      "$value": "{palette.neutral.900}"
+    },
     "tint": {
       "$value": "{palette.navy.950}"
     },
     "tint-strong": {
       "$value": "{palette.navy.800}"
-    },
-    "hero-from": {
-      "$value": "{palette.navy.800}"
-    },
-    "hero-to": {
-      "$value": "{palette.neutral.950}"
-    },
-    "hero-line": {
-      "$value": "{palette.navy.700}"
     },
     "heading": {
       "$value": "{palette.neutral.0}"

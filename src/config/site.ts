@@ -5,6 +5,8 @@
  * Fontes (out/2026): Lattes via Escavador, perfil público do LinkedIn,
  * Instagram @rachelornelas.md e CRM-MG. Campos vazios não aparecem no site.
  */
+type Photo = { src: string; alt: string }
+
 export const siteConfig = {
   name: "Rachel Campos Ornelas",
   shortName: "Rachel Ornelas",
@@ -23,9 +25,53 @@ export const siteConfig = {
   phone: "" as string,
   /** Foto principal (coloque em /public). Sem foto, aparece um placeholder. */
   portrait: {
-    src: "/images/rachel-ornelas.jpg",
-    alt: "Rachel Campos Ornelas, de jaleco, sorrindo",
-  } as { src: string; alt: string } | null,
+    src: "/images/rachel-retrato-bracos-cruzados.jpg",
+    alt: "Rachel Campos Ornelas, médica residente em Anestesiologia",
+  } as Photo | null,
+  /*
+   * Demais fotos. Todas opcionais: sem foto, o bloco some ou se ajusta.
+   * Fotos com paciente: recortar para mostrar só a Rachel (CFM/LGPD) e guardar
+   * o original em fotos-originais/ (fora do git e do public/).
+   */
+  /** Par de fotos desencontradas na seção Sobre. */
+  aboutPhotos: [
+    {
+      src: "/images/rachel-retrato-em-pe.jpg",
+      alt: "Rachel Campos Ornelas em retrato de estúdio",
+    },
+    {
+      src: "/images/copa-2025-apresentacao-2.jpg",
+      alt: "Rachel Campos Ornelas apresentando trabalho científico no COPA 2025",
+    },
+  ] as Photo[],
+  /** Foto grande ao lado da linha do tempo. */
+  workPhoto: {
+    src: "/images/residencia-centro-cirurgico-1.jpg",
+    alt: "Rachel Campos Ornelas no centro cirúrgico, durante a residência",
+  } as Photo | null,
+  /** Seção Momentos: congressos, residência e formação. */
+  moments: [
+    {
+      src: "/images/cba-69-boas-vindas.jpg",
+      alt: "Rachel Campos Ornelas diante do painel de boas-vindas do 69º Congresso Brasileiro de Anestesiologia",
+      caption: "69º Congresso Brasileiro de Anestesiologia (SBA)",
+    },
+    {
+      src: "/images/copa-2025-apresentacao-1.jpg",
+      alt: "Rachel Campos Ornelas ao lado de seu e-pôster no COPA 2025",
+      caption: "Apresentação de trabalho no COPA 2025 (SAESP)",
+    },
+    {
+      src: "/images/residencia-centro-cirurgico-2.jpg",
+      alt: "Rachel Campos Ornelas de touca e máscara, concentrada em um procedimento no centro cirúrgico",
+      caption: "Rotina no centro cirúrgico — residência no Hospital Márcio Cunha",
+    },
+    {
+      src: "/images/formatura-ufjf-gv-colacao.jpg",
+      alt: "Rachel Campos Ornelas de beca e capelo na colação de grau",
+      caption: "Colação de grau em Medicina — UFJF, Campus Governador Valadares",
+    },
+  ] as (Photo & { caption: string })[],
   // Perfis públicos. Entram no JSON-LD (sameAs), no contato e no rodapé.
   socials: [
     {

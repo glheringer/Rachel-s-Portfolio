@@ -1,12 +1,30 @@
 @use "abstracts" as *;
 
+// Header limpo e suave (referência rosemaryvidal.com.br): sem borda, vidro
+// claro com desfoque. No topo, assume a cor do hero e some nele; ao rolar,
+// vira vidro claro com uma linha fina (scroll-driven animation, sem JS).
 .header {
   position: sticky;
   top: 0;
   z-index: z(header);
-  background-color: color-mix(in srgb, #{color(bg)} 82%, transparent);
-  border-bottom: token(border, width-thin) solid color(border);
-  backdrop-filter: blur(14px) saturate(1.4);
+  background-color: color-mix(in srgb, #{color(bg)} 90%, transparent);
+  backdrop-filter: blur(12px);
+
+  @supports (animation-timeline: scroll()) {
+    animation: header-settle linear both;
+    animation-timeline: scroll();
+    animation-range: 0 token(header, height);
+  }
+}
+
+@keyframes header-settle {
+  from {
+    background-color: color(field);
+  }
+
+  to {
+    box-shadow: 0 token(border, width-thin) 0 color(border);
+  }
 }
 
 .inner {
@@ -18,10 +36,32 @@
 }
 
 .brand {
-  font-size: font-size(lg);
-  font-weight: font-weight(extrabold);
+  display: flex;
+  gap: space(3);
+  align-items: center;
   color: color(heading);
-  letter-spacing: token(font, tracking-tight);
+}
+
+// Nome na serifada itálica, como a frase de destaque.
+.brandName {
+  font-family: token(font, family-serif);
+  font-size: font-size(xl);
+  font-style: italic;
+  font-weight: font-weight(medium);
+  letter-spacing: token(font, tracking-normal);
+  white-space: nowrap;
+}
+
+// Separado do nome por um fio vertical.
+.brandCredential {
+  padding-left: space(3);
+  font-size: font-size(xs);
+  font-weight: font-weight(medium);
+  color: color(fg-muted);
+  text-transform: uppercase;
+  letter-spacing: token(font, tracking-wide);
+  white-space: nowrap;
+  border-left: token(border, width-thin) solid color(border-strong);
 }
 
 .nav {
@@ -34,21 +74,42 @@
 
 .list {
   display: flex;
-  gap: space(1);
+  gap: space(8);
 }
 
+// Caixa alta pequena e espaçada, com um fio embaixo que recolhe no hover.
 .link {
-  @include text(small);
-  @include transition(color, background-color);
-
-  display: block;
-  padding: space(2) space(4);
+  position: relative;
+  display: inline-block;
+  padding-bottom: space(1);
+  font-size: font-size(xs);
+  font-weight: font-weight(medium);
   color: color(fg-muted);
-  border-radius: radius(full);
+  text-transform: uppercase;
+  letter-spacing: token(font, tracking-widest);
+
+  @include transition(color);
+
+  &::after {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: token(border, width-thin);
+    content: "";
+    background-color: color-mix(in srgb, #{color(action)} 45%, transparent);
+    transform-origin: left;
+
+    @include motion-safe {
+      transition: scale duration(slow) ease(draw);
+    }
+  }
 
   @include hover {
     color: color(heading);
-    background-color: color(surface);
+
+    &::after {
+      scale: 0.35 1;
+    }
   }
 }
 
@@ -73,8 +134,13 @@
   width: 2.75rem;
   height: 2.75rem;
   color: color(heading);
-  border: token(border, width-thin) solid color(border);
   border-radius: radius(full);
+
+  @include transition(background-color);
+
+  @include hover {
+    background-color: color(tint);
+  }
 
   @include mq(md) {
     display: none;
@@ -102,8 +168,13 @@
   margin-bottom: space(3);
 
   .link {
+    display: block;
     padding: space(3) space(4);
-    font-size: font-size(md);
+    font-size: font-size(sm);
+
+    &::after {
+      display: none;
+    }
   }
 }
 

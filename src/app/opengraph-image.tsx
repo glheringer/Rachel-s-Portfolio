@@ -19,7 +19,8 @@ export default function OpengraphImage() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: 80,
-        background: `linear-gradient(180deg, ${color["hero-from"]}, ${color["hero-to"]})`,
+        // Linho, como o topo do site; o marinho fica no texto.
+        background: `linear-gradient(180deg, ${color.field}, ${color.tint})`,
         color: color.heading,
       }}
     >

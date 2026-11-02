@@ -1,30 +1,24 @@
 {
   "color": {
     "$type": "color",
-    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json.",
+    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json. Paleta: branco e linho nas superfícies, marinho na marca e nas seções escuras, azul só como acento (links, traçado, marcadores).",
     "bg": {
       "$value": "{palette.neutral.0}"
     },
     "surface": {
-      "$value": "{palette.neutral.50}"
+      "$value": "{palette.linen.100}"
     },
     "surface-raised": {
       "$value": "{palette.neutral.0}"
     },
+    "field": {
+      "$value": "{palette.neutral.0}"
+    },
     "tint": {
-      "$value": "{palette.sky.100}"
+      "$value": "{palette.linen.200}"
     },
     "tint-strong": {
-      "$value": "{palette.sky.300}"
-    },
-    "hero-from": {
-      "$value": "{palette.sky.400}"
-    },
-    "hero-to": {
-      "$value": "{palette.sky.50}"
-    },
-    "hero-line": {
-      "$value": "{palette.neutral.0}"
+      "$value": "{palette.linen.300}"
     },
     "heading": {
       "$value": "{palette.navy.900}"
@@ -39,10 +33,10 @@
       "$value": "{palette.neutral.500}"
     },
     "border": {
-      "$value": "{palette.neutral.200}"
+      "$value": "{palette.linen.300}"
     },
     "border-strong": {
-      "$value": "{palette.neutral.300}"
+      "$value": "{palette.linen.400}"
     },
     "accent": {
       "$value": "{palette.navy.900}"

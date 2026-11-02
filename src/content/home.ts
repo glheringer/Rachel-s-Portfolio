@@ -26,8 +26,12 @@ export const hero = {
 }
 
 export const about = {
-  statement:
-    "Acredito em uma medicina que une cuidado próximo e decisões guiadas pela melhor evidência disponível.",
+  /** Frase de destaque: aforismo de William Osler (domínio público). */
+  quote: {
+    text: "A medicina é a ciência da incerteza e a arte da probabilidade.",
+    author: "Sir William Osler",
+    role: "Médico canadense (1849–1919)",
+  },
   paragraphs: [
     "Sou médica pela Universidade Federal de Juiz de Fora, Campus Governador Valadares (UFJF-GV), e hoje faço residência em Anestesiologia no Hospital Márcio Cunha, em Ipatinga.",
     "Na graduação, fui aluna de iniciação científica na Faculdade de Saúde Pública da USP, no Laboratório de Inferência Causal em Epidemiologia (LINCE-USP), e integrei o Grupo de Pesquisa em Escorpionismo do CNPq. Tenho interesse especial por epidemiologia, pesquisa clínica e medicina baseada em evidências.",
@@ -35,6 +39,13 @@ export const about = {
   stats: [
     { icon: FileText, value: "7", label: "artigos publicados em periódicos" },
     { icon: Microscope, value: "4", label: "projetos de pesquisa" },
+  ],
+  facts: [
+    { label: "Residência", value: "Anestesiologia (R3)", detail: "Hospital Márcio Cunha" },
+    { label: "Graduação", value: "Medicina", detail: "UFJF, Campus Governador Valadares" },
+    { label: "Iniciação científica", value: "LINCE-USP", detail: "Faculdade de Saúde Pública" },
+    { label: "Registro", value: "CRM-MG 98749", detail: "Conselho Regional de Medicina de MG" },
+    { label: "Idiomas", value: "Português e inglês", detail: "Comunicação científica e clínica" },
   ],
 }
 
@@ -85,6 +96,11 @@ export const journey: { icon: LucideIcon; period: string; title: string; place: 
     place: "UFJF — Campus Governador Valadares",
   },
 ]
+
+export const moments = {
+  eyebrow: "Na prática",
+  title: "Congressos, residência e formação",
+}
 
 export const awards: { icon: LucideIcon; year: string; title: string; place: string }[] = [
   {

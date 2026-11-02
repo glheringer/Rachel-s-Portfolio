@@ -1,74 +1,66 @@
 @use "abstracts" as *;
 
-// Rodapé em azul-céu com assinatura gigante (referência D.Janat).
 .footer {
-  @include sky-panel;
-
-  padding-top: space(16);
-  overflow: hidden;
-  background-image: linear-gradient(0deg, color(hero-from), color(hero-to));
+  padding-block: space(12) space(10);
+  color: color(inverse-fg);
+  background-color: color(inverse-bg);
 }
 
-.container {
-  // A assinatura usa cqi: o tamanho acompanha a largura deste contêiner.
-  container-type: inline-size;
-}
-
-.top {
-  display: flex;
-  flex-direction: column;
-  gap: space(6);
+.inner {
+  display: grid;
+  gap: space(8);
+  padding-top: space(12);
+  border-top: token(border, width-thin) solid color(inverse-border);
 
   @include mq(md) {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
+    grid-template-columns: minmax(0, 4fr) repeat(2, minmax(0, 4fr));
+    column-gap: space(10);
   }
 }
 
-.nav,
-.socials {
-  display: flex;
-  flex-wrap: wrap;
-  gap: space(1) space(2);
+.name {
+  font-size: font-size("2xl");
+  font-weight: font-weight(bold);
+  line-height: token(font, leading-tight);
+  color: color(inverse-fg);
+}
+
+.role {
+  margin-top: space(2);
+  font-size: font-size(sm);
+  color: color(inverse-muted);
+}
+
+.links {
+  display: grid;
+  gap: space(2);
+  align-content: start;
 }
 
 .link {
   @include text(small);
-  @include transition(background-color, color);
+  @include transition(color);
 
   display: inline-flex;
   gap: space(1);
   align-items: center;
-  padding: space(2) space(3);
-  color: color(heading);
-  border-radius: radius(full);
+  color: color(inverse-muted);
 
   @include hover {
-    background-color: color-mix(in srgb, #{color(bg)} 60%, transparent);
+    color: color(inverse-fg);
   }
-}
-
-.socialLink {
-  border: token(border, width-thin) solid color-mix(in srgb, #{color(heading)} 20%, transparent);
-}
-
-.wordmark {
-  @include text(wordmark);
-
-  margin-top: space(6);
-  margin-bottom: -0.2em;
-  color: color(heading);
-  text-align: center;
-  white-space: nowrap;
-  user-select: none;
 }
 
 .legal {
   @include text(small);
 
+  grid-column: 1 / -1;
   padding-top: space(8);
-  margin-top: space(8);
-  color: color(fg-muted);
-  border-top: token(border, width-thin) solid color-mix(in srgb, #{color(heading)} 12%, transparent);
+  margin-top: space(4);
+  color: color(inverse-muted);
+  border-top: token(border, width-thin) solid color(inverse-border);
+}
+
+.srOnly {
+  @include visually-hidden;
 }

@@ -8,6 +8,7 @@ export function Publications() {
   return (
     <Section
       id="publicacoes"
+      tone="surface"
       layout="split"
       eyebrow="Publicações"
       title="Artigos selecionados"

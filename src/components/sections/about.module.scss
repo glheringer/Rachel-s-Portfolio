@@ -5,10 +5,42 @@
   gap: space(12);
 
   @include mq(lg) {
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1fr 1.35fr;
     gap: space(16);
     align-items: start;
   }
+}
+
+.mediaColumn {
+  display: grid;
+  gap: space(4);
+}
+
+// Duas fotos desencontradas: a segunda desce um pouco (referência Dribbble
+// FreeCodeLibraries).
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: space(3);
+  align-items: start;
+}
+
+.photo {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: color(surface);
+  border-radius: radius(xl);
+  box-shadow: shadow(sm);
+
+  &:nth-child(2) {
+    margin-top: space(12);
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .stats {
@@ -23,16 +55,50 @@
   justify-items: start;
 }
 
-.statement {
-  @include text(h3);
-
-  font-size: font-size("2xl");
-}
-
 .paragraphs {
   @include text(lead);
 
   display: grid;
   gap: space(4);
   color: color(fg-muted);
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+  gap: space(4);
+  width: 100%;
+  padding-top: space(6);
+  border-top: token(border, width-thin) solid color(border);
+}
+
+.fact {
+  display: grid;
+  gap: space(1);
+}
+
+.factLabel {
+  font-size: font-size(xs);
+  font-weight: font-weight(semibold);
+  letter-spacing: token(font, tracking-wide);
+  color: color(action);
+}
+
+.factValue {
+  font-size: font-size(sm);
+  font-weight: font-weight(bold);
+  color: color(heading);
+}
+
+.factDetail {
+  font-size: font-size(xs);
+  color: color(fg-muted);
+}
+
+.quote {
+  margin-top: space(20);
+
+  @include mq(md) {
+    margin-top: space(32);
+  }
 }

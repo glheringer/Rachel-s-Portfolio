@@ -45,6 +45,13 @@ export const tokens = {
       "900": "#121722",
       "950": "#0a0e17"
     },
+    "linen": {
+      "50": "#fffdfb",
+      "100": "#faf6f2",
+      "200": "#f4ece6",
+      "300": "#e6d6cc",
+      "400": "#d9c2b5"
+    },
     "green": {
       "400": "#4ade80",
       "500": "#16a34a"
@@ -108,7 +115,8 @@ export const tokens = {
   },
   "ease": {
     "standard": "cubic-bezier(0.2, 0, 0, 1)",
-    "out": "cubic-bezier(0.22, 1, 0.36, 1)"
+    "out": "cubic-bezier(0.22, 1, 0.36, 1)",
+    "draw": "cubic-bezier(0.6, 0, 0.2, 1)"
   },
   "shadow": {
     "sm": "0 1px 2px rgb(9 40 98 / 0.06)",
@@ -119,6 +127,7 @@ export const tokens = {
     "family": {
       "sans": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif",
       "display": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif",
+      "serif": "var(--font-serif-family), Georgia, serif",
       "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
     },
     "size": {
@@ -150,24 +159,23 @@ export const tokens = {
       "tight": "-0.025em",
       "normal": "0",
       "wide": "0.08em",
-      "tighter": "-0.04em"
+      "tighter": "-0.04em",
+      "widest": "0.2em"
     }
   },
   "color": {
     "bg": "#ffffff",
-    "surface": "#f6f7f9",
+    "surface": "#faf6f2",
     "surface-raised": "#ffffff",
-    "tint": "#e1f3fe",
-    "tint-strong": "#b3e2fd",
-    "hero-from": "#a0dafd",
-    "hero-to": "#f3faff",
-    "hero-line": "#ffffff",
+    "field": "#ffffff",
+    "tint": "#f4ece6",
+    "tint-strong": "#e6d6cc",
     "heading": "#092862",
     "fg": "#121722",
     "fg-muted": "#4b5466",
     "fg-subtle": "#6b7587",
-    "border": "#e2e5ea",
-    "border-strong": "#cdd2da",
+    "border": "#e6d6cc",
+    "border-strong": "#d9c2b5",
     "accent": "#092862",
     "accent-hover": "#123a80",
     "on-accent": "#ffffff",
@@ -187,11 +195,9 @@ export const darkColor = {
   "bg": "#0a0e17",
   "surface": "#121722",
   "surface-raised": "#1f2532",
+  "field": "#121722",
   "tint": "#061a40",
   "tint-strong": "#0e3170",
-  "hero-from": "#0e3170",
-  "hero-to": "#0a0e17",
-  "hero-line": "#123a80",
   "heading": "#ffffff",
   "fg": "#eef0f3",
   "fg-muted": "#9aa3b2",

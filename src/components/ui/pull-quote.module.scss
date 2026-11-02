@@ -1,0 +1,68 @@
+@use "abstracts" as *;
+
+.figure {
+  max-width: 52rem;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.quote {
+  @include text(quote);
+
+  font-style: italic;
+  color: color(heading);
+  text-wrap: balance;
+
+  // Aspas decorativas em azul de ação.
+  &::before {
+    display: block;
+    margin-bottom: space(2);
+    font-size: font-size("5xl");
+    line-height: 1;
+    color: color(action);
+    content: "“";
+  }
+}
+
+// Assinatura: foto redonda + nome + cargo, centralizada sob a frase.
+.author {
+  display: inline-flex;
+  gap: space(3);
+  align-items: center;
+  margin-top: space(10);
+
+  // Com foto, texto alinhado ao lado dela; sem foto, centralizado como a frase.
+  &:has(.avatar) {
+    text-align: left;
+  }
+}
+
+.avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: space(12);
+  height: space(12);
+  overflow: hidden;
+  background-color: color(tint-strong);
+  border-radius: radius(full);
+  box-shadow: shadow(sm);
+}
+
+.image {
+  object-fit: cover;
+}
+
+.authorText {
+  display: grid;
+  gap: space(1);
+}
+
+.name {
+  font-weight: font-weight(semibold);
+  color: color(heading);
+}
+
+.role {
+  font-size: font-size(sm);
+  color: color(fg-muted);
+}

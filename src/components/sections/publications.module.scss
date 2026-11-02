@@ -10,7 +10,18 @@
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: space(3);
   height: 100%;
+  padding: space(6);
+  background-color: color(surface-raised);
+  border-color: color(border);
+
+  @include hover {
+    border-color: color-mix(in srgb, #{color(action)} 40%, transparent);
+    box-shadow: shadow(sm);
+  }
 }
 
 .meta {
@@ -39,7 +50,9 @@
 
 .journal {
   margin-top: auto;
+  padding-top: space(3);
   font-size: font-size(sm);
   font-style: italic;
   color: color(fg-muted);
+  border-top: token(border, width-thin) solid color(border);
 }

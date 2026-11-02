@@ -10,7 +10,13 @@ export function SiteHeader() {
     <header className={styles.header}>
       <Container className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          {siteConfig.shortName}
+          <span className={styles.brandName}>{siteConfig.shortName}</span>
+          {/* CRM sempre visível (CFM), mas discreto. */}
+          {siteConfig.credentials.map((c) => (
+            <span key={c.label} className={styles.brandCredential}>
+              {c.label} {c.value}
+            </span>
+          ))}
         </Link>
 
         <nav aria-label="Principal" className={styles.nav}>
@@ -26,7 +32,7 @@ export function SiteHeader() {
         </nav>
 
         <div className={styles.actions}>
-          <ButtonLink href={primaryCta.href} className={styles.cta}>
+          <ButtonLink href={primaryCta.href} variant="secondary" icon={null} className={styles.cta}>
             {primaryCta.label}
           </ButtonLink>
           <button

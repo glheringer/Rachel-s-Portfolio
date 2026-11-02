@@ -71,15 +71,3 @@
     translate: 0 -2px;
   }
 }
-
-/// Fundo em gradiente azul-céu com linhas verticais sutis (referência D.Janat).
-@mixin sky-panel {
-  background-color: color(hero-to);
-  background-image:
-    repeating-linear-gradient(
-      90deg,
-      color-mix(in srgb, #{color(hero-line)} 35%, transparent) 0 1px,
-      transparent 1px 96px
-    ),
-    linear-gradient(180deg, color(hero-from), color(hero-to));
-}

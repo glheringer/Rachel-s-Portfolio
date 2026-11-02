@@ -2,12 +2,15 @@
   "font": {
     "family": {
       "$type": "fontFamily",
-      "$description": "Famílias vêm do next/font (src/lib/fonts.ts): Manrope em texto e títulos.",
+      "$description": "Famílias vêm do next/font (src/lib/fonts.ts): Manrope em texto e títulos; Cormorant itálica no nome do header e nas frases de destaque.",
       "sans": {
         "$value": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif"
       },
       "display": {
         "$value": "var(--font-sans-family), ui-sans-serif, system-ui, sans-serif"
+      },
+      "serif": {
+        "$value": "var(--font-serif-family), Georgia, serif"
       },
       "mono": {
         "$value": "ui-monospace, SFMono-Regular, Menlo, monospace"
@@ -94,6 +97,9 @@
       },
       "tighter": {
         "$value": "-0.04em"
+      },
+      "widest": {
+        "$value": "0.2em"
       }
     }
   }

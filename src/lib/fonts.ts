@@ -1,4 +1,4 @@
-import { Manrope } from "next/font/google"
+import { Cormorant, Manrope } from "next/font/google"
 
 /**
  * Fontes self-hosted pelo next/font (sem requisição ao Google em runtime,
@@ -6,6 +6,7 @@ import { Manrope } from "next/font/google"
  * apontam para estas variáveis.
  *
  * Manrope: geométrica, legível e calorosa — a mesma linha da referência D.Janat.
+ * Cormorant itálica: nome no header e frases de destaque (PullQuote), para dar um toque suave.
  */
 export const fontSans = Manrope({
   subsets: ["latin", "latin-ext"],
@@ -13,4 +14,12 @@ export const fontSans = Manrope({
   display: "swap",
 })
 
-export const fontVariables = fontSans.variable
+/** Com preload: o nome no header aparece logo no topo. */
+export const fontSerif = Cormorant({
+  subsets: ["latin", "latin-ext"],
+  style: "italic",
+  variable: "--font-serif-family",
+  display: "swap",
+})
+
+export const fontVariables = `${fontSans.variable} ${fontSerif.variable}`

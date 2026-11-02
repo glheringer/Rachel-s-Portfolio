@@ -3,24 +3,84 @@
 .grid {
   display: grid;
   gap: space(10);
+}
 
+// Com foto: timeline à esquerda e foto fixa à direita (referência Dribbble
+// FreeCodeLibraries — linha do tempo ao lado da foto no centro cirúrgico).
+.withPhoto {
   @include mq(lg) {
-    grid-template-columns: 1fr 1.6fr;
+    grid-template-columns: 1.5fr 1fr;
     gap: space(16);
+    align-items: start;
   }
 }
 
-// Lista no estilo dos itens de agenda do dashboard (referência MediSync).
-.list {
+// Linha vertical contínua; cada item tem um marcador sobre ela.
+.timeline {
+  --marker: #{space(3)};
+
+  position: relative;
   display: grid;
-  gap: space(3);
+  gap: space(8);
+
+  &::before {
+    position: absolute;
+    top: space(2);
+    bottom: space(2);
+    left: calc(var(--marker) / 2);
+    width: token(border, width-thin);
+    content: "";
+    background-color: color(border-strong);
+  }
 }
 
 .item {
-  flex-direction: row;
+  position: relative;
+  display: grid;
+  gap: space(3);
+  padding-left: space(8);
+
+  @include mq(md) {
+    grid-template-columns: 9rem 1fr;
+    gap: space(6);
+    align-items: start;
+  }
+}
+
+.marker {
+  position: absolute;
+  top: space(1);
+  left: 0;
+  width: var(--marker);
+  height: var(--marker);
+  background-color: color(bg);
+  border: token(border, width-thick) solid color(border-strong);
+  border-radius: radius(full);
+}
+
+.current .marker {
+  background-color: color(action);
+  border-color: color(action);
+  box-shadow: 0 0 0 4px color-mix(in srgb, #{color(action)} 20%, transparent);
+}
+
+.period {
+  @include text(small);
+
+  font-variant-numeric: tabular-nums;
+  color: color(fg-muted);
+  white-space: nowrap;
+}
+
+.current .period {
+  font-weight: font-weight(semibold);
+  color: color(action);
+}
+
+.entry {
+  display: flex;
   gap: space(4);
   align-items: center;
-  padding: space(4);
 }
 
 .text {
@@ -39,15 +99,29 @@
   color: color(fg-muted);
 }
 
-.period {
-  @include text(small);
+// Mais ou menos da altura da linha do tempo, alinhada à direita.
+.photo {
+  position: relative;
+  display: none;
+  justify-self: end;
+  width: 100%;
+  max-width: 20rem;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background-color: color(surface);
+  border-radius: radius(xl);
+  box-shadow: shadow(md);
 
-  padding: space(1) space(3);
-  font-variant-numeric: tabular-nums;
-  color: color(action);
-  white-space: nowrap;
-  background-color: color(tint);
-  border-radius: radius(full);
+  @include mq(lg) {
+    position: sticky;
+    top: space(24);
+    display: block;
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .extras {
