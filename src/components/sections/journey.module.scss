@@ -31,6 +31,27 @@
     width: token(border, width-thin);
     content: "";
     background-color: color(border-strong);
+    transform-origin: top;
+  }
+
+  // A linha se desenha de cima para baixo conforme a lista entra na tela
+  // (scroll-driven animation; sem suporte, a linha já aparece inteira).
+  @include motion-safe {
+    @supports (animation-timeline: view()) {
+      view-timeline-name: --timeline;
+
+      &::before {
+        animation: draw-down linear both;
+        animation-range: entry 10% cover 55%;
+        animation-timeline: --timeline;
+      }
+    }
+  }
+}
+
+@keyframes draw-down {
+  from {
+    scale: 1 0;
   }
 }
 
@@ -62,6 +83,32 @@
   background-color: color(action);
   border-color: color(action);
   box-shadow: 0 0 0 4px color-mix(in srgb, #{color(action)} 20%, transparent);
+
+  // Pulso lento, como um sinal no monitor: marca o que está em andamento.
+  &::after {
+    position: absolute;
+    inset: calc(-1 * token(border, width-thick));
+    content: "";
+    border: token(border, width-thick) solid color(action);
+    border-radius: radius(full);
+    opacity: 0;
+
+    @include motion-safe {
+      animation: ping 2.4s ease-out infinite;
+    }
+  }
+}
+
+@keyframes ping {
+  from {
+    opacity: 0.6;
+    scale: 1;
+  }
+
+  to {
+    opacity: 0;
+    scale: 2.6;
+  }
 }
 
 .period {

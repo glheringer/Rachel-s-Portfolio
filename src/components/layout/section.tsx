@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react"
 import { cn } from "@/lib/utils"
+import { Reveal } from "@/components/motion/reveal"
 import { SectionHeader, type SectionHeaderProps } from "@/components/ui/section-header"
 import { Container } from "./container"
 import styles from "./section.module.scss"
@@ -35,16 +36,19 @@ export function Section({
       {...props}
     >
       <Container>
+        {/* Seções ficam abaixo da dobra: o cabeçalho aparece ao entrar na tela. */}
         {title && (
-          <SectionHeader
-            eyebrow={eyebrow}
-            title={title}
-            description={description}
-            action={action}
-            layout={layout}
-            tone={tone === "inverse" ? "inverse" : "default"}
-            headingId={headingId}
-          />
+          <Reveal>
+            <SectionHeader
+              eyebrow={eyebrow}
+              title={title}
+              description={description}
+              action={action}
+              layout={layout}
+              tone={tone === "inverse" ? "inverse" : "default"}
+              headingId={headingId}
+            />
+          </Reveal>
         )}
         {children}
       </Container>

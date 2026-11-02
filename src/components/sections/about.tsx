@@ -15,8 +15,8 @@ export function About() {
         <div className={styles.mediaColumn}>
           {siteConfig.aboutPhotos.length > 0 && (
             <div className={styles.photos}>
-              {siteConfig.aboutPhotos.map((photo) => (
-                <div key={photo.src} className={styles.photo}>
+              {siteConfig.aboutPhotos.map((photo, i) => (
+                <Reveal key={photo.src} delay={i * 0.12} className={styles.photo}>
                   <Image
                     src={photo.src}
                     alt={photo.alt}
@@ -24,7 +24,7 @@ export function About() {
                     sizes="(min-width: 64rem) 16rem, 45vw"
                     className={styles.image}
                   />
-                </div>
+                </Reveal>
               ))}
             </div>
           )}

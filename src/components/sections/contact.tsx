@@ -1,6 +1,7 @@
 import { AtSign, Mail, MapPin, Phone, type LucideIcon } from "lucide-react"
 import { siteConfig } from "@/config/site"
 import { Container } from "@/components/layout/container"
+import { Reveal } from "@/components/motion/reveal"
 import { ButtonLink } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Eyebrow } from "@/components/ui/eyebrow"
@@ -27,7 +28,7 @@ export function Contact() {
   return (
     <section id="contato" aria-labelledby="contato-titulo" className={styles.section}>
       <Container>
-        <div className={styles.panel}>
+        <Reveal className={styles.panel}>
           <div className={styles.intro}>
             <Eyebrow tone="inverse">Contato</Eyebrow>
             <h2 id="contato-titulo" className={styles.title}>
@@ -67,7 +68,7 @@ export function Contact() {
               </Card>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </Container>
     </section>
   )

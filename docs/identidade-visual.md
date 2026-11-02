@@ -53,7 +53,12 @@ Títulos em negrito com espaçamento negativo; tamanhos fluidos (`clamp`).
 
 - Raio: `md` 1rem (ícones, campos), `lg` 1.5rem (cards), `xl` 2rem (painéis), `full` (botões, selos).
 - Sombras azuladas e discretas: `sm` (repouso), `md` (hover), `lg` (elementos flutuantes).
-- Movimento: só CSS no topo da página; `Reveal` (Motion) abaixo da dobra; tudo respeita "reduzir movimento".
+- Movimento: só CSS no topo da página; `Reveal` (Motion) abaixo da dobra; tudo respeita "reduzir movimento". Tema: **traço que se desenha**, como num monitor.
+  - Topo: nome, texto e botões sobem em sequência; o retrato "assenta" (leve aproximação); a capnografia se desenha. O nome e o retrato nunca começam invisíveis (são o LCP).
+  - Header: vidro claro ao rolar e fio dos links que recolhe no hover (`ease(draw)`).
+  - Seções: o cabeçalho de toda `Section` aparece ao entrar na tela; listas de cards entram em sequência (`Reveal as="li"` com `delay`).
+  - Trajetória: a linha do tempo se desenha com a rolagem (scroll-driven animation) e o marcador "atual" pulsa devagar.
+  - Números (`Stat`): contam a partir do zero com `CountUp` quando aparecem.
 
 ## Componentes
 

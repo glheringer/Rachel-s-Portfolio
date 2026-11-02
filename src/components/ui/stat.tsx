@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react"
+import { CountUp } from "@/components/motion/count-up"
 import { Card } from "./card"
 import { IconTile } from "./icon-tile"
 import styles from "./stat.module.scss"
@@ -8,7 +9,9 @@ export function Stat({ icon, value, label }: { icon: LucideIcon; value: string; 
   return (
     <Card as="div" variant="tint" className={styles.stat}>
       <IconTile icon={icon} tone="raised" />
-      <p className={styles.value}>{value}</p>
+      <p className={styles.value}>
+        <CountUp value={value} />
+      </p>
       <p className={styles.label}>{label}</p>
     </Card>
   )

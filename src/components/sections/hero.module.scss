@@ -1,5 +1,32 @@
 @use "abstracts" as *;
 
+// Entrada do topo, só em CSS (o hero aparece antes do JS).
+// O nome e o retrato não começam invisíveis: eles costumam ser o LCP.
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 space(4);
+  }
+}
+
+@keyframes rise-visible {
+  from {
+    translate: 0 space(4);
+  }
+}
+
+@keyframes settle {
+  from {
+    scale: 1.06;
+  }
+}
+
+@mixin intro($delay: 0s, $name: rise) {
+  @include motion-safe {
+    animation: $name 0.8s ease(out) $delay both;
+  }
+}
+
 // Campo no tom do fundo da foto. O traçado de capnografia corre na base,
 // de ponta a ponta, e o retrato em arco fica de pé sobre a linha.
 .hero {
@@ -40,6 +67,7 @@
 
 .title {
   @include text(display);
+  @include intro(0s, rise-visible);
 }
 
 .role {
@@ -50,6 +78,8 @@
   font-size: font-size(lg);
   font-weight: font-weight(medium);
   color: color(heading);
+
+  @include intro(0.1s);
 }
 
 .lead {
@@ -57,6 +87,8 @@
 
   max-width: 34rem;
   color: color(fg-muted);
+
+  @include intro(0.18s);
 }
 
 .actions {
@@ -64,6 +96,8 @@
   flex-wrap: wrap;
   gap: space(3);
   margin-top: space(2);
+
+  @include intro(0.26s);
 }
 
 .portrait {
@@ -76,6 +110,13 @@
     justify-self: end;
     width: 100%;
     max-width: 26rem;
+  }
+
+  // A foto "assenta" no arco: leve aproximação que se desfaz.
+  img {
+    @include motion-safe {
+      animation: settle 1.6s ease(out) both;
+    }
   }
 }
 
