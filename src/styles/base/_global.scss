@@ -8,7 +8,9 @@
   color-scheme: dark;
 }
 
-html {
+// Sem JS, a rolagem nativa suaviza os links âncora. Com JS, quem suaviza é o
+// Lenis (classe .lenis no <html>), e o scroll-behavior nativo atrapalharia.
+html:not(.lenis) {
   scroll-behavior: smooth;
 
   @media (prefers-reduced-motion: reduce) {

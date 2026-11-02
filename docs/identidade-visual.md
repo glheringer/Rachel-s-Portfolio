@@ -59,6 +59,7 @@ Títulos em negrito com espaçamento negativo; tamanhos fluidos (`clamp`).
   - Seções: o cabeçalho de toda `Section` aparece ao entrar na tela; listas de cards entram em sequência (`Reveal as="li"` com `delay`).
   - Trajetória: a linha do tempo se desenha com a rolagem (scroll-driven animation) e o marcador "atual" pulsa devagar.
   - Números (`Stat`): contam a partir do zero com `CountUp` quando aparecem.
+  - Rolagem suave em todo o site com [Lenis](https://lenis.dev) (`SmoothScroll` no layout), inclusive nos links âncora. A rolagem segue nativa por baixo, então scroll-driven animations e `Reveal` continuam funcionando; com "reduzir movimento", a suavização desliga.
 
 ## Componentes
 

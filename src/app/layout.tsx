@@ -8,7 +8,9 @@ import { JsonLd, personJsonLd, websiteJsonLd } from "@/components/seo/json-ld"
 import { SkipLink } from "@/components/layout/skip-link"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { SmoothScroll } from "@/components/motion/smooth-scroll"
 import styles from "./layout.module.scss"
+import "lenis/dist/lenis.css"
 import "./globals.scss"
 
 export const metadata: Metadata = {
@@ -53,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang={siteConfig.language} className={fontVariables}>
       <body>
+        <SmoothScroll />
         <SkipLink />
         <SiteHeader />
         <main id="conteudo" className={styles.main}>
