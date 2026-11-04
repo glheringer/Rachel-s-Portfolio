@@ -45,8 +45,8 @@
   }
 
   @include mq(lg) {
-    // 60/40: no desktop o nome cabe em duas linhas.
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    // 55/45: o nome ainda cabe em duas linhas e o retrato ganha presença.
+    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
     gap: space(12);
     align-items: end;
   }
@@ -82,11 +82,12 @@
   @include intro(0.1s);
 }
 
+// Texto corrido na cor cheia: cinza fica com cara de rascunho.
 .lead {
   @include text(lead);
 
   max-width: 34rem;
-  color: color(fg-muted);
+  color: color(fg);
 
   @include intro(0.18s);
 }
@@ -109,7 +110,7 @@
   @include mq(lg) {
     justify-self: end;
     width: 100%;
-    max-width: 26rem;
+    max-width: 30rem;
   }
 
   // A foto "assenta" no arco: leve aproximação que se desfaz.

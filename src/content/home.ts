@@ -49,21 +49,18 @@ export const about = {
   ],
 }
 
-export const interests: { icon: LucideIcon; title: string; description: string }[] = [
+export const interests: { title: string; description: string }[] = [
   {
-    icon: Syringe,
     title: "Anestesiologia",
     description:
       "Residência em andamento no Hospital Márcio Cunha, com formação complementar em monitorização da profundidade anestésica (SBA) e suporte avançado de vida.",
   },
   {
-    icon: BookOpen,
     title: "Medicina baseada em evidências",
     description:
       "Revisões sistemáticas e meta-pesquisa — como o mapa de evidências sobre colchicina na COVID-19, desenvolvido na FSP-USP.",
   },
   {
-    icon: ChartLine,
     title: "Epidemiologia",
     description:
       "Estudos sobre escorpionismo, leishmaniose visceral e anomalias congênitas em Minas Gerais e no Brasil.",
@@ -100,6 +97,8 @@ export const journey: { icon: LucideIcon; period: string; title: string; place: 
 export const moments = {
   eyebrow: "Na prática",
   title: "Congressos, residência e formação",
+  description:
+    "Registros de congressos de anestesiologia, da rotina no centro cirúrgico e da colação de grau.",
 }
 
 export const awards: { icon: LucideIcon; year: string; title: string; place: string }[] = [

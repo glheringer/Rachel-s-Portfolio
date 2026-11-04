@@ -20,7 +20,8 @@
       "$type": "dimension",
       "$description": "Tamanhos fluidos: crescem com a tela entre um mínimo e um máximo.",
       "xs": {
-        "$value": "0.75rem"
+        "$value": "0.8125rem",
+        "$description": "Menor tamanho do site: nada legível abaixo de 13px."
       },
       "sm": {
         "$value": "0.875rem"

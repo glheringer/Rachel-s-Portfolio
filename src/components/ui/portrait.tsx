@@ -20,7 +20,7 @@ export function Portrait({ photo, fallback, preload = false, className }: Portra
           src={photo.src}
           alt={photo.alt}
           fill
-          sizes="(min-width: 64rem) 28rem, 80vw"
+          sizes="(min-width: 64rem) 30rem, 80vw"
           className={styles.image}
           preload={preload}
         />

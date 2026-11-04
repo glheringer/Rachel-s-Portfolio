@@ -53,6 +53,10 @@
     "action-hover": {
       "$value": "{palette.blue.600}"
     },
+    "action-fg": {
+      "$value": "{palette.blue.600}",
+      "$description": "Texto no azul de ação (eyebrows, rótulos). O blue 500 não chega a 4,5:1 sobre branco e linho."
+    },
     "focus": {
       "$value": "{palette.blue.500}"
     },

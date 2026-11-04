@@ -8,9 +8,15 @@
   align-items: center;
   padding: space(1) space(3);
   color: color(heading);
-  background-color: color(surface-raised);
-  border: token(border, width-thin) solid color(border);
   border-radius: radius(full);
+}
+
+.tint {
+  background-color: color(tint);
+}
+
+.raised {
+  background-color: color(surface-raised);
 }
 
 .dot {

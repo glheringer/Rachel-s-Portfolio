@@ -9,8 +9,7 @@
 .inner {
   display: grid;
   gap: space(8);
-  padding-top: space(12);
-  border-top: token(border, width-thin) solid color(inverse-border);
+  padding-top: space(8);
 
   @include mq(md) {
     grid-template-columns: minmax(0, 4fr) repeat(2, minmax(0, 4fr));
@@ -55,10 +54,8 @@
   @include text(small);
 
   grid-column: 1 / -1;
-  padding-top: space(8);
-  margin-top: space(4);
+  margin-top: space(8);
   color: color(inverse-muted);
-  border-top: token(border, width-thin) solid color(inverse-border);
 }
 
 .srOnly {

@@ -1,45 +1,37 @@
 @use "abstracts" as *;
 
-.grid {
+.list {
   display: grid;
-  gap: space(4);
+  gap: space(10);
 
-  @include mq(md) {
-    grid-template-columns: repeat(3, 1fr);
+  @include mq(lg) {
+    gap: space(12);
   }
 }
 
-.card {
-  gap: space(6);
-  height: 100%;
-  min-height: 16rem;
+// Mesmas colunas do SectionHeader "split" (1.1fr / 1fr): os títulos alinham
+// com o título da seção e os textos com a descrição.
+.item {
+  display: grid;
+  gap: space(3);
 
-  @include hover {
-    border-color: color-mix(in srgb, #{color(action)} 50%, transparent);
+  @include mq(lg) {
+    grid-template-columns: 1.1fr 1fr;
+    gap: space(16);
+    align-items: baseline;
   }
-}
-
-.top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-// Numeração 01 / 02 / 03 (referência D.Janat).
-.index {
-  font-size: font-size(sm);
-  font-weight: font-weight(semibold);
-  font-variant-numeric: tabular-nums;
-  color: color(inverse-muted);
 }
 
 .title {
   @include text(h3);
 
-  margin-top: space(4);
+  font-size: font-size("2xl");
   color: color(inverse-fg);
 }
 
 .description {
+  @include text(lead);
+
+  max-width: token(container, narrow);
   color: color(inverse-muted);
 }

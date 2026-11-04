@@ -9,10 +9,9 @@
   border-radius: radius(lg);
 }
 
+// Branco sobre o linho: o degrau de tom já separa, sem contorno nem sombra.
 .raised {
   background-color: color(surface-raised);
-  border-color: color(border);
-  box-shadow: shadow(sm);
 }
 
 .tint {
@@ -26,7 +25,6 @@
 .inverse {
   color: color(inverse-fg);
   background-color: color(inverse-surface);
-  border-color: color(inverse-border);
 }
 
 .interactive {

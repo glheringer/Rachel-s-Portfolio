@@ -121,7 +121,7 @@
 
 .current .period {
   font-weight: font-weight(semibold);
-  color: color(action);
+  color: color(action-fg);
 }
 
 .entry {
@@ -157,7 +157,6 @@
   overflow: hidden;
   background-color: color(surface);
   border-radius: radius(xl);
-  box-shadow: shadow(md);
 
   @include mq(lg) {
     position: sticky;

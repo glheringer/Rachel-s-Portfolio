@@ -43,11 +43,10 @@
 
 .secondary {
   color: color(heading);
-  background-color: color(surface-raised);
-  border-color: color(border);
+  background-color: color(tint);
 
   @include hover {
-    border-color: color(border-strong);
+    background-color: color(tint-strong);
   }
 }
 

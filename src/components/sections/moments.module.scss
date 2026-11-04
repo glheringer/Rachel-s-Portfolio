@@ -1,35 +1,27 @@
 @use "abstracts" as *;
 
-// Trilho: rolagem lateral com encaixe no celular; grade de 4 no desktop.
-.rail {
+.grid {
   display: grid;
-  grid-auto-columns: min(75%, 18rem);
-  grid-auto-flow: column;
-  gap: space(4);
-  padding-bottom: space(2);
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
-  scroll-snap-type: x mandatory;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: space(8) space(4);
 
   @include mq(lg) {
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-flow: row;
-    overflow: visible;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: space(6);
   }
 }
 
-.slot {
-  scroll-snap-align: start;
+.figure {
+  display: grid;
+  gap: space(3);
+  margin: 0;
 }
 
-.card {
+.frame {
   position: relative;
-  justify-content: flex-end;
   aspect-ratio: 4 / 5;
-  padding: 0;
-  margin: 0;
   overflow: hidden;
-  background-color: color(inverse-bg);
+  background-color: color(surface);
   border-radius: radius(xl);
 }
 
@@ -44,16 +36,8 @@
   }
 }
 
-// Degradê escuro na base para a legenda ficar legível sobre qualquer foto.
 .caption {
   @include text(small);
 
-  position: relative;
-  padding: space(16) space(5) space(5);
-  color: color(inverse-fg);
-  background-image: linear-gradient(
-    to top,
-    color-mix(in srgb, #{color(inverse-bg)} 90%, transparent),
-    transparent
-  );
+  color: color(fg-muted);
 }

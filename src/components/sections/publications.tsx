@@ -18,7 +18,7 @@ export function Publications() {
       <ul role="list" className={styles.list}>
         {publications.map(({ year, title, journal, lead }, i) => (
           <Reveal as="li" key={title} delay={(i % 2) * 0.08}>
-            <Card variant="outline" interactive className={styles.card}>
+            <Card interactive className={styles.card}>
               <div className={styles.meta}>
                 <span className={styles.year}>{year}</span>
                 {lead && <Chip>Primeira autora</Chip>}

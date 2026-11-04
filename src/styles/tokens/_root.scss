@@ -47,7 +47,7 @@
   --font-family-display: var(--font-sans-family), ui-sans-serif, system-ui, sans-serif;
   --font-family-serif: var(--font-serif-family), Georgia, serif;
   --font-family-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
-  --font-size-xs: 0.75rem;
+  --font-size-xs: 0.8125rem; /** Menor tamanho do site: nada legível abaixo de 13px. */
   --font-size-sm: 0.875rem;
   --font-size-md: 1rem;
   --font-size-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
@@ -88,6 +88,7 @@
   --color-on-accent: #ffffff;
   --color-action: #0078f8;
   --color-action-hover: #0062cc;
+  --color-action-fg: #0062cc; /** Texto no azul de ação (eyebrows, rótulos). O blue 500 não chega a 4,5:1 sobre branco e linho. */
   --color-focus: #0078f8;
   --color-positive: #16a34a;
   --color-inverse-bg: #061a40;

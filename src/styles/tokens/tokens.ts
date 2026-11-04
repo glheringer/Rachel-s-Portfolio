@@ -131,7 +131,7 @@ export const tokens = {
       "mono": "ui-monospace, SFMono-Regular, Menlo, monospace"
     },
     "size": {
-      "xs": "0.75rem",
+      "xs": "0.8125rem",
       "sm": "0.875rem",
       "md": "1rem",
       "lg": "clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem)",
@@ -181,6 +181,7 @@ export const tokens = {
     "on-accent": "#ffffff",
     "action": "#0078f8",
     "action-hover": "#0062cc",
+    "action-fg": "#0062cc",
     "focus": "#0078f8",
     "positive": "#16a34a",
     "inverse-bg": "#061a40",
@@ -209,6 +210,7 @@ export const darkColor = {
   "on-accent": "#061a40",
   "action": "#3d95fa",
   "action-hover": "#6cc4fa",
+  "action-fg": "#3d95fa",
   "focus": "#3d95fa",
   "positive": "#4ade80",
   "inverse-bg": "#061a40",

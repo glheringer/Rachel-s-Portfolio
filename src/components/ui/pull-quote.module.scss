@@ -9,9 +9,14 @@
 .quote {
   @include text(quote);
 
+  font-size: font-size("2xl");
   font-style: italic;
   color: color(heading);
   text-wrap: balance;
+
+  @include mq(md) {
+    font-size: font-size("4xl");
+  }
 
   // Aspas decorativas em azul de ação.
   &::before {

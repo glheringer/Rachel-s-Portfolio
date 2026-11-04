@@ -53,6 +53,9 @@
     "action-hover": {
       "$value": "{palette.sky.500}"
     },
+    "action-fg": {
+      "$value": "{palette.blue.400}"
+    },
     "focus": {
       "$value": "{palette.blue.400}"
     },

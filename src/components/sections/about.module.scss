@@ -31,7 +31,6 @@
   overflow: hidden;
   background-color: color(surface);
   border-radius: radius(xl);
-  box-shadow: shadow(sm);
 
   &:nth-child(2) {
     margin-top: space(12);
@@ -60,16 +59,15 @@
 
   display: grid;
   gap: space(4);
-  color: color(fg-muted);
+  color: color(fg);
 }
 
 .facts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
-  gap: space(4);
+  gap: space(5) space(4);
   width: 100%;
-  padding-top: space(6);
-  border-top: token(border, width-thin) solid color(border);
+  padding-top: space(4);
 }
 
 .fact {
@@ -81,7 +79,7 @@
   font-size: font-size(xs);
   font-weight: font-weight(semibold);
   letter-spacing: token(font, tracking-wide);
-  color: color(action);
+  color: color(action-fg);
 }
 
 .factValue {

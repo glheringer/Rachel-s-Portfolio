@@ -64,10 +64,12 @@
   border-left: token(border, width-thin) solid color(border-strong);
 }
 
+// Links só a partir do lg: no tablet, nome + CRM + links + CTA não cabem
+// na largura e a página rolava para o lado.
 .nav {
   display: none;
 
-  @include mq(md) {
+  @include mq(lg) {
     display: block;
   }
 }
@@ -142,7 +144,7 @@
     background-color: color(tint);
   }
 
-  @include mq(md) {
+  @include mq(lg) {
     display: none;
   }
 }

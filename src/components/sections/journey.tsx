@@ -84,7 +84,7 @@ export function Journey() {
           <ul role="list" className={styles.chips}>
             {certifications.map((c) => (
               <li key={c}>
-                <Chip>{c}</Chip>
+                <Chip tone="raised">{c}</Chip>
               </li>
             ))}
           </ul>

@@ -15,9 +15,7 @@
   padding: space(10) space(6);
   color: color(inverse-fg);
   background-color: color(inverse-bg);
-  border: token(border, width-thin) solid color-mix(in srgb, #{color(action)} 25%, transparent);
   border-radius: radius(xl);
-  box-shadow: shadow(lg);
 
   @include mq(md) {
     padding: space(16) space(12);
