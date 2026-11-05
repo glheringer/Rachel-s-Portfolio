@@ -16,7 +16,13 @@ import {
 } from "lucide-react"
 
 export const hero = {
-  lead: "Médica pela UFJF-GV, residente (R3) em Anestesiologia no Hospital Márcio Cunha, em Ipatinga — MG. Pesquisa em epidemiologia e medicina baseada em evidências.",
+  /**
+   * Destaque do topo, no lugar do nome gigante. Residente não pode se anunciar
+   * como especialista (CFM): quando ela tiver o RQE, troque por "Médica
+   * anestesiologista" e cadastre o RQE em siteConfig.credentials.
+   */
+  role: "Médica residente em Anestesiologia",
+  lead: "Formada pela UFJF-GV e residente (R3) no Hospital Márcio Cunha, em Ipatinga — MG. Pesquisa em epidemiologia e medicina baseada em evidências.",
   highlights: [
     { icon: Syringe, title: "Anestesiologia" },
     { icon: BookOpen, title: "Medicina baseada em evidências" },

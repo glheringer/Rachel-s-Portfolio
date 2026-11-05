@@ -1,24 +1,24 @@
 {
   "color": {
     "$type": "color",
-    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json. Paleta aconchegante: branco quente e linho nas superfícies, azul ardósia (ink) na marca, nas seções escuras e nos detalhes; terracota só como contraste (botão principal, capnografia, marcador atual).",
+    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json. Paleta do bloco cirúrgico: branco-gelo esverdeado (mint) nas superfícies, azul ardósia (ink) na marca, nas seções escuras e nos detalhes; verde cirúrgico (jade) só como contraste (botão principal, capnografia, marcador atual).",
     "bg": {
-      "$value": "{palette.linen.50}"
+      "$value": "{palette.mint.50}"
     },
     "surface": {
-      "$value": "{palette.linen.100}"
+      "$value": "{palette.mint.100}"
     },
     "surface-raised": {
       "$value": "{palette.neutral.0}"
     },
     "field": {
-      "$value": "{palette.linen.50}"
+      "$value": "{palette.mint.50}"
     },
     "tint": {
-      "$value": "{palette.linen.200}"
+      "$value": "{palette.mint.200}"
     },
     "tint-strong": {
-      "$value": "{palette.linen.300}"
+      "$value": "{palette.mint.300}"
     },
     "heading": {
       "$value": "{palette.ink.900}"
@@ -33,10 +33,10 @@
       "$value": "{palette.neutral.500}"
     },
     "border": {
-      "$value": "{palette.linen.300}"
+      "$value": "{palette.mint.300}"
     },
     "border-strong": {
-      "$value": "{palette.linen.400}"
+      "$value": "{palette.mint.400}"
     },
     "accent": {
       "$value": "{palette.ink.900}"
@@ -61,18 +61,18 @@
       "$value": "{palette.ink.700}"
     },
     "highlight": {
-      "$value": "{palette.terracotta.600}",
+      "$value": "{palette.jade.600}",
       "$description": "Cor forte da paleta. Só no botão principal; nunca em texto pequeno."
     },
     "highlight-hover": {
-      "$value": "{palette.terracotta.700}"
+      "$value": "{palette.jade.700}"
     },
     "on-highlight": {
       "$value": "{palette.neutral.0}"
     },
     "highlight-line": {
-      "$value": "{palette.terracotta.500}",
-      "$description": "Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto."
+      "$value": "{palette.jade.500}",
+      "$description": "Traços e marcadores em verde cirúrgico (capnografia, marcador atual). Nunca para texto."
     },
     "positive": {
       "$value": "{palette.green.500}"

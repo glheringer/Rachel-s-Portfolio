@@ -1,7 +1,7 @@
 {
   "palette": {
     "$type": "color",
-    "$description": "Paleta bruta, com duas cores calmas e uma forte: linen (tons de linho de um portfólio indicado pelo cliente — rosemaryvidal.com.br) e ink (azul ardósia, o marinho suavizado) na base; terracotta como contraste, usada pouco. Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
+    "$description": "Paleta bruta, com duas cores calmas e uma forte: mint (branco-gelo esverdeado e frio das superfícies, sem puxar para o amarelo) e ink (azul ardósia, o marinho suavizado) na base; jade (verde dos campos e roupas do bloco cirúrgico) como contraste, usada pouco. Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
     "ink": {
       "50": { "$value": "#f3f5f9" },
       "100": { "$value": "#e4e9f1" },
@@ -15,14 +15,14 @@
       "900": { "$value": "#26344a" },
       "950": { "$value": "#1c2738" }
     },
-    "terracotta": {
-      "50": { "$value": "#fbf1ec" },
-      "100": { "$value": "#f6e3d8" },
-      "200": { "$value": "#ecc6b3" },
-      "400": { "$value": "#d4835f" },
-      "500": { "$value": "#c0643f" },
-      "600": { "$value": "#a8502f" },
-      "700": { "$value": "#8c4127" }
+    "jade": {
+      "50": { "$value": "#ebf6f2" },
+      "100": { "$value": "#d2ece2" },
+      "200": { "$value": "#a6d8c5" },
+      "400": { "$value": "#4aa98a" },
+      "500": { "$value": "#2b8a6c" },
+      "600": { "$value": "#1f7058" },
+      "700": { "$value": "#185a47" }
     },
     "neutral": {
       "0": { "$value": "#ffffff" },
@@ -39,12 +39,12 @@
       "900": { "$value": "#121722" },
       "950": { "$value": "#0a0e17" }
     },
-    "linen": {
-      "50": { "$value": "#fffdfb" },
-      "100": { "$value": "#faf6f2" },
-      "200": { "$value": "#f4ece6" },
-      "300": { "$value": "#e6d6cc" },
-      "400": { "$value": "#d9c2b5" }
+    "mint": {
+      "50": { "$value": "#fafcfc" },
+      "100": { "$value": "#f1f6f5" },
+      "200": { "$value": "#e3edeb" },
+      "300": { "$value": "#cddcd9" },
+      "400": { "$value": "#b1c6c2" }
     },
     "green": {
       "400": { "$value": "#4ade80" },

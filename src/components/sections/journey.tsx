@@ -49,13 +49,16 @@ export function Journey() {
 
         {workPhoto && (
           <div className={styles.photo}>
-            <Image
-              src={workPhoto.src}
-              alt={workPhoto.alt}
-              fill
-              sizes="(min-width: 64rem) 24rem, 100vw"
-              className={styles.image}
-            />
+            {/* Moldura relative: o next/image com fill não aceita pai sticky. */}
+            <div className={styles.frame}>
+              <Image
+                src={workPhoto.src}
+                alt={workPhoto.alt}
+                fill
+                sizes="(min-width: 64rem) 24rem, 100vw"
+                className={styles.image}
+              />
+            </div>
           </div>
         )}
       </div>

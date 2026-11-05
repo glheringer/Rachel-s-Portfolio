@@ -8,6 +8,7 @@ import { JsonLd, personJsonLd, websiteJsonLd } from "@/components/seo/json-ld"
 import { SkipLink } from "@/components/layout/skip-link"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
+import { BackToTop } from "@/components/layout/back-to-top"
 import { SmoothScroll } from "@/components/motion/smooth-scroll"
 import styles from "./layout.module.scss"
 import "lenis/dist/lenis.css"
@@ -54,7 +55,8 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang={siteConfig.language} className={fontVariables}>
-      <body>
+      {/* id="topo": alvo do botão de voltar ao topo. */}
+      <body id="topo">
         <SmoothScroll />
         <SkipLink />
         <SiteHeader />
@@ -62,6 +64,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
         </main>
         <SiteFooter />
+        <BackToTop />
         <JsonLd data={personJsonLd} />
         <JsonLd data={websiteJsonLd} />
         <Analytics />

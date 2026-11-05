@@ -47,6 +47,10 @@
       "5xl": {
         "$value": "clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem)"
       },
+      "hero": {
+        "$value": "min(clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem), 9svh)",
+        "$description": "Atuação no topo, no desktop: duas linhas e cabe na altura da tela (svh), para a capnografia aparecer já no carregamento."
+      },
       "wordmark": {
         "$value": "13.5cqi",
         "$description": "Assinatura gigante no rodapé (referência D.Janat). Em cqi: ocupa a largura do contêiner. Ajuste se o nome mudar de tamanho."

@@ -2,6 +2,9 @@
 
 :root {
   color-scheme: light;
+
+  // Deixa o header ler a linha do tempo do nome do hero (irmãos na árvore).
+  timeline-scope: --hero-name;
 }
 
 :root[data-theme="dark"] {
@@ -15,6 +18,15 @@ html:not(.lenis) {
 
   @media (prefers-reduced-motion: reduce) {
     scroll-behavior: auto;
+  }
+}
+
+// O Reveal (motion) já sai do servidor com opacity 0 no style inline.
+// Com "reduzir movimento", o conteúdo aparece pronto, sem esperar a rolagem.
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 

@@ -1,0 +1,50 @@
+@use "abstracts" as *;
+
+// Círculo em ardósia no canto de baixo, à direita. A terracota fica só no
+// botão principal; aqui vai a cor calma da marca.
+.button {
+  position: fixed;
+  right: max(space(4), env(safe-area-inset-right));
+  bottom: max(space(4), env(safe-area-inset-bottom));
+  z-index: z(header);
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  color: color(on-accent);
+  background-color: color(accent);
+  border-radius: radius(full);
+
+  // Flutua de verdade sobre o conteúdo: aqui a sombra separa.
+  box-shadow: shadow(md);
+
+  @include mq(md) {
+    right: space(8);
+    bottom: space(8);
+  }
+
+  @include hover {
+    background-color: color(accent-hover);
+  }
+
+  @include motion-safe {
+    transition: background-color duration(fast) ease(standard);
+  }
+
+  // Escondido no topo; aparece ao longo da primeira tela rolada.
+  // Sem suporte, fica sempre visível.
+  @supports (animation-timeline: scroll()) {
+    animation: show linear both;
+    animation-timeline: scroll(root);
+    animation-range: 50vh 90vh;
+  }
+}
+
+// visibility junto da opacidade: invisível, o botão também não recebe
+// clique nem foco pelo teclado.
+@keyframes show {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+}

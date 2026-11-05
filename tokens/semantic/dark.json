@@ -60,18 +60,18 @@
       "$value": "{palette.ink.300}"
     },
     "highlight": {
-      "$value": "{palette.terracotta.400}",
+      "$value": "{palette.jade.400}",
       "$description": "Cor forte da paleta. Só no botão principal; nunca em texto pequeno."
     },
     "highlight-hover": {
-      "$value": "{palette.terracotta.200}"
+      "$value": "{palette.jade.200}"
     },
     "on-highlight": {
       "$value": "{palette.ink.950}"
     },
     "highlight-line": {
-      "$value": "{palette.terracotta.400}",
-      "$description": "Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto."
+      "$value": "{palette.jade.400}",
+      "$description": "Traços e marcadores em verde cirúrgico (capnografia, marcador atual). Nunca para texto."
     },
     "positive": {
       "$value": "{palette.green.400}"

@@ -11,7 +11,7 @@ type PortraitProps = {
   className?: string
 }
 
-/** Retrato em arco. Sem foto, mostra as iniciais no mesmo formato. */
+/** Retrato em retângulo arredondado. Sem foto, mostra as iniciais no mesmo formato. */
 export function Portrait({ photo, fallback, preload = false, className }: PortraitProps) {
   return (
     <div className={cn(styles.portrait, className)}>
@@ -20,7 +20,7 @@ export function Portrait({ photo, fallback, preload = false, className }: Portra
           src={photo.src}
           alt={photo.alt}
           fill
-          sizes="(min-width: 64rem) 30rem, 80vw"
+          sizes="(min-width: 64rem) 28rem, (min-width: 24rem) 24rem, 100vw"
           className={styles.image}
           preload={preload}
         />

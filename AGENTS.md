@@ -12,6 +12,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 - Dados da pessoa e rotas do sitemap: `src/config/site.ts`; textos da home: `src/content/home.ts` — não espalhe textos/links pelo código. Não invente fatos sobre ela: o conteúdo vem do Lattes, LinkedIn e Instagram profissional (fontes no topo de `site.ts`). Ela é **residente** — não a chame de "anestesiologista"/especialista (regra do CFM) e sempre exiba o CRM.
 - Identidade visual e catálogo de componentes: `docs/identidade-visual.md`. Reutilize `src/components/ui/` antes de criar algo novo.
+- `DESIGN.md` (raiz) resume a identidade para agentes de design (Claude Design, Stitch). Ao mudar tokens ou componentes, atualize-o junto.
 - Estilos: SCSS Modules (`*.module.scss`) com `@use "abstracts" as *;`. Valores só via tokens (`space()`, `color()`, `text()`...). Nada de cores/medidas cruas; nada de Tailwind.
 - Tokens: edite `tokens/*.json` e rode `pnpm tokens`. Nunca edite `src/styles/tokens/` (gerado). Para TS, importe de `@/styles/tokens/tokens`.
 - Cache Components está ativo: evite `new Date()`/`Math.random()` em Server Components sem `"use cache"`.

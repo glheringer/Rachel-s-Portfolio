@@ -7,6 +7,21 @@
  */
 type Photo = { src: string; alt: string }
 
+/** Local de atendimento (seção "Onde atendo"). */
+type Practice = {
+  /** Nome do consultório ou clínica (opcional). */
+  name?: string
+  /** Rua e número: vira o título da seção. */
+  street: string
+  district?: string
+  city: string
+  region: string
+  /** CEP: ajuda o mapa a achar o endereço certo. */
+  postalCode?: string
+  /** Frase curta embaixo do endereço (ex.: "Atendimento com hora marcada."). */
+  note?: string
+}
+
 export const siteConfig = {
   name: "Rachel Campos Ornelas",
   shortName: "Rachel Ornelas",
@@ -23,6 +38,18 @@ export const siteConfig = {
   credentials: [{ label: "CRM-MG", value: "98749" }] as { label: string; value: string }[],
   email: "" as string,
   phone: "" as string,
+  /**
+   * Onde ela atende. Enquanto for `null`, a seção "Onde atendo" e o link no
+   * menu não aparecem. Só preencha com dados confirmados por ela.
+   */
+  practice: {
+    name: "Clínica Dias",
+    street: "Rua Cento e Vinte e Oito, 14",
+    district: "Santa Maria",
+    city: "Timóteo",
+    region: "MG",
+    postalCode: "35180-002",
+  } as Practice | null,
   /** Foto principal (coloque em /public). Sem foto, aparece um placeholder. */
   portrait: {
     src: "/images/rachel-retrato-bracos-cruzados.jpg",
@@ -106,12 +133,13 @@ export const siteConfig = {
   ],
 } as const
 
-export const navItems = [
+export const navItems: { label: string; href: string }[] = [
   { label: "Sobre", href: "/#sobre" },
   { label: "Interesses", href: "/#interesses" },
   { label: "Trajetória", href: "/#trajetoria" },
   { label: "Publicações", href: "/#publicacoes" },
-] as const
+  ...(siteConfig.practice ? [{ label: "Atendimento", href: "/#atendimento" }] : []),
+]
 
 /** CTA principal do site. */
 export const primaryCta = { label: "Fale comigo", href: "/#contato" } as const

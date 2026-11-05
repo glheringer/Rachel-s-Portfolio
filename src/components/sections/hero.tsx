@@ -3,28 +3,28 @@ import { hero } from "@/content/home"
 import { Container } from "@/components/layout/container"
 import { ButtonLink } from "@/components/ui/button"
 import { Capnogram } from "@/components/ui/capnogram"
-import { Chip } from "@/components/ui/chip"
 import { Portrait } from "@/components/ui/portrait"
 import styles from "./hero.module.scss"
 
+/**
+ * Topo: o destaque é a atuação ("Médica residente em Anestesiologia"), com o
+ * nome menor logo acima, na serifada do header. Texto à esquerda, retrato à
+ * direita (embaixo, no celular), e a capnografia correndo na base.
+ * A marca do header fica escondida até o título sair da tela.
+ */
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="inicio-titulo">
-      <Container className={styles.inner}>
-        <div className={styles.content}>
-          {/* Único h1: o nome completo ajuda a ranquear por "Rachel Campos Ornelas". */}
+      <Container className={styles.stage}>
+        <div className={styles.copy}>
+          {/* Único h1, com nome e atuação: ajuda a ranquear pelos dois. */}
           <h1 id="inicio-titulo" className={styles.title}>
-            {siteConfig.name}
+            <span className={styles.name}>
+              {siteConfig.name}
+              <span className={styles.srOnly}>, </span>
+            </span>
+            <span className={styles.role}>{hero.role}</span>
           </h1>
-
-          <div className={styles.role}>
-            <p>{siteConfig.jobTitle}</p>
-            {siteConfig.credentials.map((c) => (
-              <Chip key={c.label} label={c.label}>
-                {c.value}
-              </Chip>
-            ))}
-          </div>
 
           <p className={styles.lead}>{hero.lead}</p>
 
@@ -36,6 +36,13 @@ export function Hero() {
               Ver publicações
             </ButtonLink>
           </div>
+
+          {/* CRM sempre visível (CFM): no topo, a marca do header ainda não aparece. */}
+          {siteConfig.credentials.map((c) => (
+            <p key={c.label} className={styles.credential}>
+              {c.label} {c.value}
+            </p>
+          ))}
         </div>
 
         <Portrait

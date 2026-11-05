@@ -1,13 +1,12 @@
 @use "abstracts" as *;
 
-// Retrato em arco: topo em semicírculo, base reta para "pisar" no traçado.
-// Numa proporção 4:5, metade da largura equivale a 40% da altura.
+// Retrato em retângulo 4:5 com cantos arredondados.
 .portrait {
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background-color: color(tint-strong);
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
+  border-radius: radius(xl);
 }
 
 .image {

@@ -1,0 +1,109 @@
+@use "abstracts" as *;
+
+.section {
+  padding-block: space(20);
+
+  @include mq(md) {
+    padding-block: space(32);
+  }
+}
+
+// Celular: endereço e, embaixo, o mapa. Desktop: lado a lado.
+.layout {
+  display: grid;
+  gap: space(10);
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: space(16);
+    align-items: center;
+  }
+}
+
+.info {
+  display: grid;
+  gap: space(4);
+  justify-items: start;
+}
+
+.name {
+  @include text(lead);
+
+  font-weight: font-weight(semibold);
+  color: color(heading);
+}
+
+// O endereço é o título da seção (referência do exemplo enviado pela cliente).
+.street {
+  @include text(h2);
+
+  color: color(heading);
+  text-wrap: balance;
+}
+
+.place {
+  @include text(lead);
+
+  display: inline-flex;
+  gap: space(2);
+  align-items: center;
+  color: color(fg);
+}
+
+.pin {
+  flex-shrink: 0;
+  width: 1.25em;
+  height: 1.25em;
+  color: color(action);
+}
+
+.note {
+  @include text(body);
+
+  max-width: 32rem;
+  color: color(fg-muted);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(3) space(6);
+  align-items: center;
+  margin-top: space(4);
+}
+
+// Link de texto com fio embaixo, como os links do header.
+.link {
+  @include text(small);
+
+  padding-block: space(1);
+  font-weight: font-weight(semibold);
+  color: color(action-fg);
+  background: linear-gradient(currentcolor, currentcolor) left bottom / 100%
+    token(border, width-thin) no-repeat;
+
+  @include motion-safe {
+    transition: background-size duration(base) ease(draw);
+  }
+
+  @include hover {
+    background-size: 0% token(border, width-thin);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+.map {
+  overflow: hidden;
+  background-color: color(tint);
+  border-radius: radius(xl);
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 0;
+}

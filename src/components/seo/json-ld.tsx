@@ -33,6 +33,24 @@ export const personJsonLd: WithContext<Person> = {
         },
       }
     : {}),
+  ...(siteConfig.practice
+    ? {
+        workLocation: {
+          "@type": "MedicalClinic",
+          ...(siteConfig.practice.name ? { name: siteConfig.practice.name } : {}),
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: siteConfig.practice.street,
+            addressLocality: siteConfig.practice.city,
+            addressRegion: siteConfig.practice.region,
+            ...(siteConfig.practice.postalCode
+              ? { postalCode: siteConfig.practice.postalCode }
+              : {}),
+            addressCountry: siteConfig.location.country,
+          },
+        },
+      }
+    : {}),
   alumniOf: { "@type": "CollegeOrUniversity", name: siteConfig.alumniOf },
   affiliation: { "@type": "Hospital", name: siteConfig.affiliation },
   knowsAbout: [...siteConfig.knowsAbout],

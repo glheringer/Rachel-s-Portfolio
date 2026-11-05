@@ -15,14 +15,14 @@ export const tokens = {
       "900": "#26344a",
       "950": "#1c2738"
     },
-    "terracotta": {
-      "50": "#fbf1ec",
-      "100": "#f6e3d8",
-      "200": "#ecc6b3",
-      "400": "#d4835f",
-      "500": "#c0643f",
-      "600": "#a8502f",
-      "700": "#8c4127"
+    "jade": {
+      "50": "#ebf6f2",
+      "100": "#d2ece2",
+      "200": "#a6d8c5",
+      "400": "#4aa98a",
+      "500": "#2b8a6c",
+      "600": "#1f7058",
+      "700": "#185a47"
     },
     "neutral": {
       "0": "#ffffff",
@@ -39,12 +39,12 @@ export const tokens = {
       "900": "#121722",
       "950": "#0a0e17"
     },
-    "linen": {
-      "50": "#fffdfb",
-      "100": "#faf6f2",
-      "200": "#f4ece6",
-      "300": "#e6d6cc",
-      "400": "#d9c2b5"
+    "mint": {
+      "50": "#fafcfc",
+      "100": "#f1f6f5",
+      "200": "#e3edeb",
+      "300": "#cddcd9",
+      "400": "#b1c6c2"
     },
     "green": {
       "400": "#4ade80",
@@ -134,6 +134,7 @@ export const tokens = {
       "3xl": "clamp(1.875rem, 1.45rem + 1.8vw, 2.75rem)",
       "4xl": "clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem)",
       "5xl": "clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem)",
+      "hero": "min(clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem), 9svh)",
       "wordmark": "13.5cqi"
     },
     "weight": {
@@ -158,18 +159,18 @@ export const tokens = {
     }
   },
   "color": {
-    "bg": "#fffdfb",
-    "surface": "#faf6f2",
+    "bg": "#fafcfc",
+    "surface": "#f1f6f5",
     "surface-raised": "#ffffff",
-    "field": "#fffdfb",
-    "tint": "#f4ece6",
-    "tint-strong": "#e6d6cc",
+    "field": "#fafcfc",
+    "tint": "#e3edeb",
+    "tint-strong": "#cddcd9",
     "heading": "#26344a",
     "fg": "#121722",
     "fg-muted": "#4b5466",
     "fg-subtle": "#6b7587",
-    "border": "#e6d6cc",
-    "border-strong": "#d9c2b5",
+    "border": "#cddcd9",
+    "border-strong": "#b1c6c2",
     "accent": "#26344a",
     "accent-hover": "#33435c",
     "on-accent": "#ffffff",
@@ -177,10 +178,10 @@ export const tokens = {
     "action-hover": "#33435c",
     "action-fg": "#44587a",
     "focus": "#44587a",
-    "highlight": "#a8502f",
-    "highlight-hover": "#8c4127",
+    "highlight": "#1f7058",
+    "highlight-hover": "#185a47",
     "on-highlight": "#ffffff",
-    "highlight-line": "#c0643f",
+    "highlight-line": "#2b8a6c",
     "positive": "#16a34a",
     "inverse-bg": "#1c2738",
     "inverse-surface": "#26344a",
@@ -210,10 +211,10 @@ export const darkColor = {
   "action-hover": "#c9d2e1",
   "action-fg": "#a3b2ca",
   "focus": "#a3b2ca",
-  "highlight": "#d4835f",
-  "highlight-hover": "#ecc6b3",
+  "highlight": "#4aa98a",
+  "highlight-hover": "#a6d8c5",
   "on-highlight": "#1c2738",
-  "highlight-line": "#d4835f",
+  "highlight-line": "#4aa98a",
   "positive": "#4ade80",
   "inverse-bg": "#1c2738",
   "inverse-surface": "#26344a",

@@ -27,6 +27,7 @@ export function Reveal({
 
   return (
     <Tag
+      data-reveal
       className={className}
       initial={reduce ? false : { opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}

@@ -42,6 +42,28 @@
   color: color(heading);
 }
 
+// Na home, o nome gigante do hero já apresenta a Rachel: a marca do header
+// aparece enquanto ele passa por baixo do header (scroll-driven, sem JS).
+// Sem suporte, ou em outras páginas, a marca fica sempre visível.
+@supports (animation-timeline: view()) {
+  :global(:root:has(#inicio-titulo)) .brand {
+    animation: brand-in linear both;
+    animation-timeline: --hero-name;
+    animation-range: exit 0% exit 100%;
+
+    // Pelo teclado, aparece na hora.
+    &:focus-visible {
+      animation: none;
+    }
+  }
+}
+
+@keyframes brand-in {
+  from {
+    opacity: 0;
+  }
+}
+
 // Nome na serifada itálica, como a frase de destaque.
 .brandName {
   font-family: token(font, family-serif);

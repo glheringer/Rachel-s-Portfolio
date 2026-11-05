@@ -56,6 +56,7 @@
   --font-size-3xl: clamp(1.875rem, 1.45rem + 1.8vw, 2.75rem);
   --font-size-4xl: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem);
   --font-size-5xl: clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem);
+  --font-size-hero: min(clamp(2.25rem, 1.5rem + 2.6vw, 3.5rem), 9svh); /** Atuação no topo, no desktop: duas linhas e cabe na altura da tela (svh), para a capnografia aparecer já no carregamento. */
   --font-size-wordmark: 13.5cqi; /** Assinatura gigante no rodapé (referência D.Janat). Em cqi: ocupa a largura do contêiner. Ajuste se o nome mudar de tamanho. */
   --font-weight-regular: 400;
   --font-weight-medium: 500;
@@ -71,18 +72,18 @@
   --font-tracking-wide: 0.08em;
   --font-tracking-tighter: -0.04em;
   --font-tracking-widest: 0.2em;
-  --color-bg: #fffdfb;
-  --color-surface: #faf6f2;
+  --color-bg: #fafcfc;
+  --color-surface: #f1f6f5;
   --color-surface-raised: #ffffff;
-  --color-field: #fffdfb;
-  --color-tint: #f4ece6;
-  --color-tint-strong: #e6d6cc;
+  --color-field: #fafcfc;
+  --color-tint: #e3edeb;
+  --color-tint-strong: #cddcd9;
   --color-heading: #26344a;
   --color-fg: #121722;
   --color-fg-muted: #4b5466;
   --color-fg-subtle: #6b7587;
-  --color-border: #e6d6cc;
-  --color-border-strong: #d9c2b5;
+  --color-border: #cddcd9;
+  --color-border-strong: #b1c6c2;
   --color-accent: #26344a;
   --color-accent-hover: #33435c;
   --color-on-accent: #ffffff;
@@ -90,10 +91,10 @@
   --color-action-hover: #33435c;
   --color-action-fg: #44587a; /** Texto no azul de ação (eyebrows, rótulos). Mesmo tom do action; fica separado para o tema escuro. */
   --color-focus: #44587a;
-  --color-highlight: #a8502f; /** Cor forte da paleta. Só no botão principal; nunca em texto pequeno. */
-  --color-highlight-hover: #8c4127;
+  --color-highlight: #1f7058; /** Cor forte da paleta. Só no botão principal; nunca em texto pequeno. */
+  --color-highlight-hover: #185a47;
   --color-on-highlight: #ffffff;
-  --color-highlight-line: #c0643f; /** Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto. */
+  --color-highlight-line: #2b8a6c; /** Traços e marcadores em verde cirúrgico (capnografia, marcador atual). Nunca para texto. */
   --color-positive: #16a34a;
   --color-inverse-bg: #1c2738;
   --color-inverse-surface: #26344a;

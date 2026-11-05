@@ -1,7 +1,7 @@
 @use "abstracts" as *;
 
 // Entrada do topo, só em CSS (o hero aparece antes do JS).
-// O nome e o retrato não começam invisíveis: eles costumam ser o LCP.
+// O título e o retrato não começam invisíveis: eles costumam ser o LCP.
 @keyframes rise {
   from {
     opacity: 0;
@@ -27,93 +27,124 @@
   }
 }
 
-// Campo no tom do fundo da foto. O traçado de capnografia corre na base,
-// de ponta a ponta, e o retrato em arco fica de pé sobre a linha.
+// Campo claro com a capnografia correndo na base, de ponta a ponta.
 .hero {
   position: relative;
-  overflow: hidden;
+  overflow: clip;
   background-color: color(field);
 }
 
-.inner {
+// Celular e tablet: texto e, embaixo, o retrato.
+// Desktop: texto à esquerda, retrato à direita.
+// O padding de baixo deixa o traçado livre, abaixo do retrato.
+.stage {
   display: grid;
   gap: space(12);
-  padding-top: space(12);
+  padding-block: space(12) space(20);
 
   @include mq(md) {
     padding-top: space(16);
   }
 
+  // Desktop: o topo inteiro cabe na tela (com a capnografia na base),
+  // para a animação aparecer já no carregamento.
   @include mq(lg) {
-    // 55/45: o nome ainda cabe em duas linhas e o retrato ganha presença.
-    grid-template-columns: minmax(0, 11fr) minmax(0, 9fr);
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
     gap: space(12);
-    align-items: end;
+    align-items: center;
+    padding-block: space(8) space(20);
   }
 }
 
-.content {
+.copy {
   display: grid;
   gap: space(6);
   justify-items: start;
+  max-width: 40rem;
 
   @include mq(lg) {
-    align-self: center;
-
-    // Folga para o traçado não encostar nos botões.
-    padding-bottom: space(16);
+    gap: space(5);
   }
 }
 
 .title {
-  @include text(display);
+  display: grid;
+  gap: space(3);
+
+  @include mq(lg) {
+    gap: space(2);
+  }
+
   @include intro(0s, rise-visible);
+
+  // Linha do tempo que o header usa para mostrar a marca quando o título sai
+  // da tela (ver site-header.module.scss e timeline-scope em _global.scss).
+  view-timeline-name: --hero-name;
 }
 
-.role {
-  display: flex;
-  flex-wrap: wrap;
-  gap: space(2) space(4);
-  align-items: center;
-  font-size: font-size(lg);
+// Nome menor, na serifada itálica da marca do header.
+.name {
+  font-family: token(font, family-serif);
+  font-size: font-size("2xl");
+  font-style: italic;
   font-weight: font-weight(medium);
-  color: color(heading);
+  line-height: token(font, leading-snug);
+  color: color(fg-muted);
+}
 
-  @include intro(0.1s);
+.srOnly {
+  @include visually-hidden;
+}
+
+// O destaque: a atuação, grande e em negrito.
+.role {
+  @include text(display);
+
+  color: color(heading);
+  text-wrap: balance;
+
+  @include mq(lg) {
+    font-size: font-size(hero);
+  }
 }
 
 // Texto corrido na cor cheia: cinza fica com cara de rascunho.
 .lead {
   @include text(lead);
+  @include intro(0.1s);
 
   max-width: 34rem;
   color: color(fg);
-
-  @include intro(0.18s);
 }
 
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: space(3);
-  margin-top: space(2);
 
-  @include intro(0.26s);
+  @include intro(0.2s);
+}
+
+.credential {
+  font-size: font-size(sm);
+  font-weight: font-weight(medium);
+  font-variant-numeric: tabular-nums;
+  color: color(fg-muted);
 }
 
 .portrait {
   position: relative;
   z-index: z(raised);
   justify-self: center;
-  width: min(100%, 20rem);
+  width: min(100%, 24rem);
 
+  // No desktop, a altura da foto acompanha a da tela (4:5 → largura = 80% da altura).
   @include mq(lg) {
     justify-self: end;
-    width: 100%;
-    max-width: 30rem;
+    width: min(100%, 28rem, (100svh - token(header, height) - space(8) - space(20)) * 0.8);
   }
 
-  // A foto "assenta" no arco: leve aproximação que se desfaz.
+  // A foto "assenta" no quadro: leve aproximação que se desfaz.
   img {
     @include motion-safe {
       animation: settle 1.6s ease(out) both;
