@@ -7,25 +7,29 @@
   --color-surface: #121722;
   --color-surface-raised: #1f2532;
   --color-field: #121722;
-  --color-tint: #061a40;
-  --color-tint-strong: #0e3170;
+  --color-tint: #1c2738;
+  --color-tint-strong: #33435c;
   --color-heading: #ffffff;
   --color-fg: #eef0f3;
   --color-fg-muted: #9aa3b2;
   --color-fg-subtle: #6b7587;
   --color-border: #1f2532;
   --color-border-strong: #343b4a;
-  --color-accent: #b3e2fd;
-  --color-accent-hover: #ccecff;
-  --color-on-accent: #061a40;
-  --color-action: #3d95fa;
-  --color-action-hover: #6cc4fa;
-  --color-action-fg: #3d95fa;
-  --color-focus: #3d95fa;
+  --color-accent: #a3b2ca;
+  --color-accent-hover: #c9d2e1;
+  --color-on-accent: #1c2738;
+  --color-action: #a3b2ca;
+  --color-action-hover: #c9d2e1;
+  --color-action-fg: #a3b2ca;
+  --color-focus: #a3b2ca;
+  --color-highlight: #d4835f; /** Cor forte da paleta. Só no botão principal; nunca em texto pequeno. */
+  --color-highlight-hover: #ecc6b3;
+  --color-on-highlight: #1c2738;
+  --color-highlight-line: #d4835f; /** Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto. */
   --color-positive: #4ade80;
-  --color-inverse-bg: #061a40;
-  --color-inverse-surface: #092862;
+  --color-inverse-bg: #1c2738;
+  --color-inverse-surface: #26344a;
   --color-inverse-fg: #ffffff;
-  --color-inverse-muted: #b3c8ea;
-  --color-inverse-border: #0e3170;
+  --color-inverse-muted: #c9d2e1;
+  --color-inverse-border: #33435c;
 }

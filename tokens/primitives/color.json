@@ -1,34 +1,28 @@
 {
   "palette": {
     "$type": "color",
-    "$description": "Paleta bruta. Referências: navy (ProCares), sky (D.Janat), blue (MediSync), linen (tons de linho de um portfólio indicado pelo cliente — rosemaryvidal.com.br). Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
-    "navy": {
-      "50": { "$value": "#eef3fb" },
-      "100": { "$value": "#d9e4f5" },
-      "200": { "$value": "#b3c8ea" },
-      "300": { "$value": "#7f9fd6" },
-      "400": { "$value": "#4c76bf" },
-      "500": { "$value": "#2654a3" },
-      "600": { "$value": "#163f87" },
-      "700": { "$value": "#123a80" },
-      "800": { "$value": "#0e3170" },
-      "900": { "$value": "#092862" },
-      "950": { "$value": "#061a40" }
+    "$description": "Paleta bruta, com duas cores calmas e uma forte: linen (tons de linho de um portfólio indicado pelo cliente — rosemaryvidal.com.br) e ink (azul ardósia, o marinho suavizado) na base; terracotta como contraste, usada pouco. Componentes NÃO usam estes valores diretamente — só os tokens semânticos (color.*).",
+    "ink": {
+      "50": { "$value": "#f3f5f9" },
+      "100": { "$value": "#e4e9f1" },
+      "200": { "$value": "#c9d2e1" },
+      "300": { "$value": "#a3b2ca" },
+      "400": { "$value": "#8195b5" },
+      "500": { "$value": "#6b81a3" },
+      "600": { "$value": "#556b8f" },
+      "700": { "$value": "#44587a" },
+      "800": { "$value": "#33435c" },
+      "900": { "$value": "#26344a" },
+      "950": { "$value": "#1c2738" }
     },
-    "sky": {
-      "50": { "$value": "#f3faff" },
-      "100": { "$value": "#e1f3fe" },
-      "200": { "$value": "#ccecff" },
-      "300": { "$value": "#b3e2fd" },
-      "400": { "$value": "#a0dafd" },
-      "500": { "$value": "#6cc4fa" },
-      "600": { "$value": "#2fa6ee" }
-    },
-    "blue": {
-      "400": { "$value": "#3d95fa" },
-      "500": { "$value": "#0078f8" },
-      "600": { "$value": "#0062cc" },
-      "700": { "$value": "#004fa6" }
+    "terracotta": {
+      "50": { "$value": "#fbf1ec" },
+      "100": { "$value": "#f6e3d8" },
+      "200": { "$value": "#ecc6b3" },
+      "400": { "$value": "#d4835f" },
+      "500": { "$value": "#c0643f" },
+      "600": { "$value": "#a8502f" },
+      "700": { "$value": "#8c4127" }
     },
     "neutral": {
       "0": { "$value": "#ffffff" },

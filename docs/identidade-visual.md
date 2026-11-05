@@ -1,6 +1,6 @@
 # Identidade visual
 
-Direção: **"cuidado claro"** — confiança clínica (azul-marinho), acolhimento (linho quente), ação nítida (azul vivo, só nos detalhes). Branco e linho se alternando, cantos arredondados, sombras suaves.
+Direção: **"cuidado aconchegante"**: duas cores calmas que combinam, que são o acolhimento (linho quente) e a confiança (azul ardósia, um marinho suavizado), e uma cor forte usada pouco (terracota). Branco quente e linho se alternando, cantos arredondados, sombras suaves.
 
 ## Referências
 
@@ -14,6 +14,7 @@ Direção: **"cuidado claro"** — confiança clínica (azul-marinho), acolhimen
 | [Dr. Jilly's](https://dr-jillys-portfolio.framer.website/)                                                             | linha do tempo período → cargo; frase de filosofia em largura total                                                                                                                                                 |
 | [Doctor Portfolio (FreeCodeLibraries)](https://dribbble.com/shots/27349375-Doctor-Portfolio-Web-Template-Design)       | linha do tempo ao lado de foto grande no centro cirúrgico; duas fotos desencontradas no "Sobre"                                                                                                                     |
 | Pinterest — Synora                                                                                                     | cards de foto com legenda sobre degradê                                                                                                                                                                             |
+| [Reel @nunesouushi](https://www.instagram.com/p/DfSqyjVKmp8/)                                                          | regra das 3 cores: duas calmas que combinam e uma forte que "faz o trabalho", em poucos pontos (botão, um detalhe)                                                                                                  |
 
 ## Cores
 
@@ -21,27 +22,29 @@ Paleta bruta em `tokens/primitives/color.json`; componentes usam **só** os pap�
 
 O site é **sempre claro**, como as referências. A coluna "Escuro" só vale se o tema escuro for ativado (`<html data-theme="dark">`).
 
-Três famílias, cada uma com um papel:
+Três famílias: duas calmas e uma forte.
 
-- **Superfícies:** branco (`bg`, `field`) e linho (`surface`) se alternando entre as seções; cards e ícones em linho mais escuro (`tint`).
-- **Marca e profundidade:** marinho nos títulos, no botão primário e nas seções escuras (Interesses, Contato, rodapé). Sobre o marinho, os detalhes usam o linho (`tint-strong`).
-- **Acento:** azul vivo (`action`) só em links, eyebrows, ícones, marcadores da linha do tempo e no traçado da capnografia. Nada de fundos azul-claros.
+- **Superfícies (calma):** branco quente (`bg`, `field`, linen 50) e linho (`surface`) se alternando entre as seções; cards e ícones em linho mais escuro (`tint`).
+- **Marca e detalhes (calma):** azul ardósia (`ink`) nos títulos, nas seções escuras (Interesses, Contato, rodapé), nos links, eyebrows, ícones e marcadores da linha do tempo (`action`). Sobre o ardósia, os detalhes usam o linho (`tint-strong`).
+- **Contraste (forte):** terracota (`highlight*`) **só em 3 pontos**: o botão principal (`ButtonLink` padrão: topo e menu mobile), o traçado da capnografia e o marcador "atual" da linha do tempo. Não espalhe: se ela aparecer em todo lugar, deixa de chamar atenção. Para texto, só `highlight` (terracotta 600); `highlight-line` (500) é para traços e marcadores.
 
-Ritmo da home: Hero (branco, separado do Sobre pelo traçado da capnografia) → Sobre (branco) → Interesses (marinho) → Trajetória (linho) → Momentos (branco) → Publicações (linho) → Contato (branco, bloco marinho) → rodapé (marinho).
+Ritmo da home: Hero (branco quente, separado do Sobre pelo traçado da capnografia) → Sobre (branco quente) → Interesses (ardósia) → Trajetória (linho) → Momentos (branco quente) → Publicações (linho) → Contato (branco quente, bloco ardósia) → rodapé (ardósia).
 
-| Papel                      | Claro             | Escuro            | Uso                                               |
-| -------------------------- | ----------------- | ----------------- | ------------------------------------------------- |
-| `heading`                  | navy 900          | branco            | títulos                                           |
-| `fg` / `fg-muted`          | neutral 900 / 600 | neutral 100 / 400 | texto                                             |
-| `accent`                   | navy 900          | sky 300           | botão primário, blocos de marca                   |
-| `action` / `focus`         | blue 500          | blue 400          | links, ícones, eyebrows, traçado, foco            |
-| `bg`                       | branco            | neutral 950       | seções brancas                                    |
-| `surface`                  | linen 100         | neutral 900       | seções em linho (`Section tone="surface"`)        |
-| `field`                    | branco            | neutral 900       | hero e header no topo da página                   |
-| `tint` / `tint-strong`     | linen 200 / 300   | navy 950 / 800    | cards de número, ícones, detalhes sobre o marinho |
-| `border` / `border-strong` | linen 300 / 400   | neutral 800 / 700 | contornos, linha do tempo                         |
-| `inverse-*`                | navy 950 / 900    | —                 | seções escuras, bloco de contato, rodapé          |
-| `positive`                 | green 500         | green 400         | ponto "disponível"                                |
+| Papel                           | Claro                | Escuro               | Uso                                                  |
+| ------------------------------- | -------------------- | -------------------- | ---------------------------------------------------- |
+| `heading`                       | ink 900              | branco               | títulos                                              |
+| `fg` / `fg-muted`               | neutral 900 / 600    | neutral 100 / 400    | texto                                                |
+| `accent`                        | ink 900              | ink 300              | blocos de marca, ícone do site, setas dos botões     |
+| `action` / `focus`              | ink 700              | ink 300              | links, ícones, eyebrows, marcadores, foco            |
+| `highlight` / `highlight-hover` | terracotta 600 / 700 | terracotta 400 / 200 | botão principal                                      |
+| `highlight-line`                | terracotta 500       | terracotta 400       | traçado da capnografia, marcador atual (nunca texto) |
+| `bg`                            | linen 50             | neutral 950          | seções em branco quente                              |
+| `surface`                       | linen 100            | neutral 900          | seções em linho (`Section tone="surface"`)           |
+| `field`                         | linen 50             | neutral 900          | hero e header no topo da página                      |
+| `tint` / `tint-strong`          | linen 200 / 300      | ink 950 / 800        | cards de número, ícones, detalhes sobre o ardósia    |
+| `border` / `border-strong`      | linen 300 / 400      | neutral 800 / 700    | contornos, linha do tempo                            |
+| `inverse-*`                     | ink 950 / 900        | —                    | seções escuras, bloco de contato, rodapé             |
+| `positive`                      | green 500            | green 400            | ponto "disponível"                                   |
 
 ## Tipografia
 
@@ -52,7 +55,7 @@ Títulos em negrito com espaçamento negativo; tamanhos fluidos (`clamp`).
 ## Forma e profundidade
 
 - Raio: `md` 1rem (ícones, campos), `lg` 1.5rem (cards), `xl` 2rem (painéis), `full` (botões, selos).
-- Sombras azuladas e discretas: `sm` (repouso), `md` (hover), `lg` (elementos flutuantes).
+- Sombras discretas no tom do ardósia: `sm` (repouso), `md` (hover), `lg` (elementos flutuantes).
 - Movimento: só CSS no topo da página; `Reveal` (Motion) abaixo da dobra; tudo respeita "reduzir movimento". Tema: **traço que se desenha**, como num monitor.
   - Topo: nome, texto e botões sobem em sequência; o retrato "assenta" (leve aproximação); a capnografia se desenha. O nome e o retrato nunca começam invisíveis (são o LCP).
   - Header: vidro claro ao rolar e fio dos links que recolhe no hover (`ease(draw)`).

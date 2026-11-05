@@ -26,15 +26,15 @@
   },
   "shadow": {
     "$type": "shadow",
-    "$description": "Sombras suaves com leve tom azul-marinho.",
+    "$description": "Sombras suaves com leve tom azul ardósia (ink 900).",
     "sm": {
-      "$value": "0 1px 2px rgb(9 40 98 / 0.06)"
+      "$value": "0 1px 2px rgb(38 52 74 / 0.06)"
     },
     "md": {
-      "$value": "0 12px 32px -12px rgb(9 40 98 / 0.18)"
+      "$value": "0 12px 32px -12px rgb(38 52 74 / 0.18)"
     },
     "lg": {
-      "$value": "0 24px 60px -20px rgb(9 40 98 / 0.28)"
+      "$value": "0 24px 60px -20px rgb(38 52 74 / 0.28)"
     }
   }
 }

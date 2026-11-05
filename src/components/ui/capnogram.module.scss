@@ -12,7 +12,7 @@
 
 .trace {
   display: block;
-  color: color(action);
+  color: color(highlight-line);
 
   // Velocidade constante, como a varredura de um monitor.
   @include motion-safe {

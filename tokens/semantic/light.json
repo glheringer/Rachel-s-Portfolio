@@ -1,9 +1,9 @@
 {
   "color": {
     "$type": "color",
-    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json. Paleta: branco e linho nas superfícies, marinho na marca e nas seções escuras, azul só como acento (links, traçado, marcadores).",
+    "$description": "Tokens semânticos — tema claro. Mesmas chaves em dark.json. Paleta aconchegante: branco quente e linho nas superfícies, azul ardósia (ink) na marca, nas seções escuras e nos detalhes; terracota só como contraste (botão principal, capnografia, marcador atual).",
     "bg": {
-      "$value": "{palette.neutral.0}"
+      "$value": "{palette.linen.50}"
     },
     "surface": {
       "$value": "{palette.linen.100}"
@@ -12,7 +12,7 @@
       "$value": "{palette.neutral.0}"
     },
     "field": {
-      "$value": "{palette.neutral.0}"
+      "$value": "{palette.linen.50}"
     },
     "tint": {
       "$value": "{palette.linen.200}"
@@ -21,7 +21,7 @@
       "$value": "{palette.linen.300}"
     },
     "heading": {
-      "$value": "{palette.navy.900}"
+      "$value": "{palette.ink.900}"
     },
     "fg": {
       "$value": "{palette.neutral.900}"
@@ -39,44 +39,58 @@
       "$value": "{palette.linen.400}"
     },
     "accent": {
-      "$value": "{palette.navy.900}"
+      "$value": "{palette.ink.900}"
     },
     "accent-hover": {
-      "$value": "{palette.navy.700}"
+      "$value": "{palette.ink.800}"
     },
     "on-accent": {
       "$value": "{palette.neutral.0}"
     },
     "action": {
-      "$value": "{palette.blue.500}"
+      "$value": "{palette.ink.700}"
     },
     "action-hover": {
-      "$value": "{palette.blue.600}"
+      "$value": "{palette.ink.800}"
     },
     "action-fg": {
-      "$value": "{palette.blue.600}",
-      "$description": "Texto no azul de ação (eyebrows, rótulos). O blue 500 não chega a 4,5:1 sobre branco e linho."
+      "$value": "{palette.ink.700}",
+      "$description": "Texto no azul de ação (eyebrows, rótulos). Mesmo tom do action; fica separado para o tema escuro."
     },
     "focus": {
-      "$value": "{palette.blue.500}"
+      "$value": "{palette.ink.700}"
+    },
+    "highlight": {
+      "$value": "{palette.terracotta.600}",
+      "$description": "Cor forte da paleta. Só no botão principal; nunca em texto pequeno."
+    },
+    "highlight-hover": {
+      "$value": "{palette.terracotta.700}"
+    },
+    "on-highlight": {
+      "$value": "{palette.neutral.0}"
+    },
+    "highlight-line": {
+      "$value": "{palette.terracotta.500}",
+      "$description": "Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto."
     },
     "positive": {
       "$value": "{palette.green.500}"
     },
     "inverse-bg": {
-      "$value": "{palette.navy.950}"
+      "$value": "{palette.ink.950}"
     },
     "inverse-surface": {
-      "$value": "{palette.navy.900}"
+      "$value": "{palette.ink.900}"
     },
     "inverse-fg": {
       "$value": "{palette.neutral.0}"
     },
     "inverse-muted": {
-      "$value": "{palette.navy.200}"
+      "$value": "{palette.ink.200}"
     },
     "inverse-border": {
-      "$value": "{palette.navy.800}"
+      "$value": "{palette.ink.800}"
     }
   }
 }

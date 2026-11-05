@@ -15,10 +15,10 @@
       "$value": "{palette.neutral.900}"
     },
     "tint": {
-      "$value": "{palette.navy.950}"
+      "$value": "{palette.ink.950}"
     },
     "tint-strong": {
-      "$value": "{palette.navy.800}"
+      "$value": "{palette.ink.800}"
     },
     "heading": {
       "$value": "{palette.neutral.0}"
@@ -39,43 +39,57 @@
       "$value": "{palette.neutral.700}"
     },
     "accent": {
-      "$value": "{palette.sky.300}"
+      "$value": "{palette.ink.300}"
     },
     "accent-hover": {
-      "$value": "{palette.sky.200}"
+      "$value": "{palette.ink.200}"
     },
     "on-accent": {
-      "$value": "{palette.navy.950}"
+      "$value": "{palette.ink.950}"
     },
     "action": {
-      "$value": "{palette.blue.400}"
+      "$value": "{palette.ink.300}"
     },
     "action-hover": {
-      "$value": "{palette.sky.500}"
+      "$value": "{palette.ink.200}"
     },
     "action-fg": {
-      "$value": "{palette.blue.400}"
+      "$value": "{palette.ink.300}"
     },
     "focus": {
-      "$value": "{palette.blue.400}"
+      "$value": "{palette.ink.300}"
+    },
+    "highlight": {
+      "$value": "{palette.terracotta.400}",
+      "$description": "Cor forte da paleta. Só no botão principal; nunca em texto pequeno."
+    },
+    "highlight-hover": {
+      "$value": "{palette.terracotta.200}"
+    },
+    "on-highlight": {
+      "$value": "{palette.ink.950}"
+    },
+    "highlight-line": {
+      "$value": "{palette.terracotta.400}",
+      "$description": "Traços e marcadores em terracota (capnografia, marcador atual). Nunca para texto."
     },
     "positive": {
       "$value": "{palette.green.400}"
     },
     "inverse-bg": {
-      "$value": "{palette.navy.950}"
+      "$value": "{palette.ink.950}"
     },
     "inverse-surface": {
-      "$value": "{palette.navy.900}"
+      "$value": "{palette.ink.900}"
     },
     "inverse-fg": {
       "$value": "{palette.neutral.0}"
     },
     "inverse-muted": {
-      "$value": "{palette.navy.200}"
+      "$value": "{palette.ink.200}"
     },
     "inverse-border": {
-      "$value": "{palette.navy.800}"
+      "$value": "{palette.ink.800}"
     }
   }
 }

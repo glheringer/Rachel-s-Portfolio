@@ -32,12 +32,13 @@
   font-size: font-size(md);
 }
 
+// Terracota: a cor forte da paleta fica só no botão principal.
 .primary {
-  color: color(on-accent);
-  background-color: color(accent);
+  color: color(on-highlight);
+  background-color: color(highlight);
 
   @include hover {
-    background-color: color(accent-hover);
+    background-color: color(highlight-hover);
   }
 }
 
@@ -73,8 +74,8 @@
   }
 
   .primary & {
-    color: color(accent);
-    background-color: color(on-accent);
+    color: color(highlight);
+    background-color: color(on-highlight);
   }
 
   .secondary & {

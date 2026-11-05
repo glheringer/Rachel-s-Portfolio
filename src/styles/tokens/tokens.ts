@@ -2,33 +2,27 @@
 
 export const tokens = {
   "palette": {
-    "navy": {
-      "50": "#eef3fb",
-      "100": "#d9e4f5",
-      "200": "#b3c8ea",
-      "300": "#7f9fd6",
-      "400": "#4c76bf",
-      "500": "#2654a3",
-      "600": "#163f87",
-      "700": "#123a80",
-      "800": "#0e3170",
-      "900": "#092862",
-      "950": "#061a40"
+    "ink": {
+      "50": "#f3f5f9",
+      "100": "#e4e9f1",
+      "200": "#c9d2e1",
+      "300": "#a3b2ca",
+      "400": "#8195b5",
+      "500": "#6b81a3",
+      "600": "#556b8f",
+      "700": "#44587a",
+      "800": "#33435c",
+      "900": "#26344a",
+      "950": "#1c2738"
     },
-    "sky": {
-      "50": "#f3faff",
-      "100": "#e1f3fe",
-      "200": "#ccecff",
-      "300": "#b3e2fd",
-      "400": "#a0dafd",
-      "500": "#6cc4fa",
-      "600": "#2fa6ee"
-    },
-    "blue": {
-      "400": "#3d95fa",
-      "500": "#0078f8",
-      "600": "#0062cc",
-      "700": "#004fa6"
+    "terracotta": {
+      "50": "#fbf1ec",
+      "100": "#f6e3d8",
+      "200": "#ecc6b3",
+      "400": "#d4835f",
+      "500": "#c0643f",
+      "600": "#a8502f",
+      "700": "#8c4127"
     },
     "neutral": {
       "0": "#ffffff",
@@ -119,9 +113,9 @@ export const tokens = {
     "draw": "cubic-bezier(0.6, 0, 0.2, 1)"
   },
   "shadow": {
-    "sm": "0 1px 2px rgb(9 40 98 / 0.06)",
-    "md": "0 12px 32px -12px rgb(9 40 98 / 0.18)",
-    "lg": "0 24px 60px -20px rgb(9 40 98 / 0.28)"
+    "sm": "0 1px 2px rgb(38 52 74 / 0.06)",
+    "md": "0 12px 32px -12px rgb(38 52 74 / 0.18)",
+    "lg": "0 24px 60px -20px rgb(38 52 74 / 0.28)"
   },
   "font": {
     "family": {
@@ -164,31 +158,35 @@ export const tokens = {
     }
   },
   "color": {
-    "bg": "#ffffff",
+    "bg": "#fffdfb",
     "surface": "#faf6f2",
     "surface-raised": "#ffffff",
-    "field": "#ffffff",
+    "field": "#fffdfb",
     "tint": "#f4ece6",
     "tint-strong": "#e6d6cc",
-    "heading": "#092862",
+    "heading": "#26344a",
     "fg": "#121722",
     "fg-muted": "#4b5466",
     "fg-subtle": "#6b7587",
     "border": "#e6d6cc",
     "border-strong": "#d9c2b5",
-    "accent": "#092862",
-    "accent-hover": "#123a80",
+    "accent": "#26344a",
+    "accent-hover": "#33435c",
     "on-accent": "#ffffff",
-    "action": "#0078f8",
-    "action-hover": "#0062cc",
-    "action-fg": "#0062cc",
-    "focus": "#0078f8",
+    "action": "#44587a",
+    "action-hover": "#33435c",
+    "action-fg": "#44587a",
+    "focus": "#44587a",
+    "highlight": "#a8502f",
+    "highlight-hover": "#8c4127",
+    "on-highlight": "#ffffff",
+    "highlight-line": "#c0643f",
     "positive": "#16a34a",
-    "inverse-bg": "#061a40",
-    "inverse-surface": "#092862",
+    "inverse-bg": "#1c2738",
+    "inverse-surface": "#26344a",
     "inverse-fg": "#ffffff",
-    "inverse-muted": "#b3c8ea",
-    "inverse-border": "#0e3170"
+    "inverse-muted": "#c9d2e1",
+    "inverse-border": "#33435c"
   }
 } as const
 
@@ -197,25 +195,29 @@ export const darkColor = {
   "surface": "#121722",
   "surface-raised": "#1f2532",
   "field": "#121722",
-  "tint": "#061a40",
-  "tint-strong": "#0e3170",
+  "tint": "#1c2738",
+  "tint-strong": "#33435c",
   "heading": "#ffffff",
   "fg": "#eef0f3",
   "fg-muted": "#9aa3b2",
   "fg-subtle": "#6b7587",
   "border": "#1f2532",
   "border-strong": "#343b4a",
-  "accent": "#b3e2fd",
-  "accent-hover": "#ccecff",
-  "on-accent": "#061a40",
-  "action": "#3d95fa",
-  "action-hover": "#6cc4fa",
-  "action-fg": "#3d95fa",
-  "focus": "#3d95fa",
+  "accent": "#a3b2ca",
+  "accent-hover": "#c9d2e1",
+  "on-accent": "#1c2738",
+  "action": "#a3b2ca",
+  "action-hover": "#c9d2e1",
+  "action-fg": "#a3b2ca",
+  "focus": "#a3b2ca",
+  "highlight": "#d4835f",
+  "highlight-hover": "#ecc6b3",
+  "on-highlight": "#1c2738",
+  "highlight-line": "#d4835f",
   "positive": "#4ade80",
-  "inverse-bg": "#061a40",
-  "inverse-surface": "#092862",
+  "inverse-bg": "#1c2738",
+  "inverse-surface": "#26344a",
   "inverse-fg": "#ffffff",
-  "inverse-muted": "#b3c8ea",
-  "inverse-border": "#0e3170"
+  "inverse-muted": "#c9d2e1",
+  "inverse-border": "#33435c"
 } as const
