@@ -1,0 +1,48 @@
+@use "abstracts" as *;
+
+.switcher {
+  position: fixed;
+  bottom: max(space(4), env(safe-area-inset-bottom));
+  left: 50%;
+  z-index: z(overlay);
+  display: flex;
+  gap: space(1);
+  align-items: center;
+  padding: space(1);
+  font-size: font-size(sm);
+  font-weight: font-weight(semibold);
+  color: color(inverse-fg);
+  background-color: color(inverse-bg);
+  border-radius: radius(full);
+  box-shadow: shadow(lg);
+  translate: -50% 0;
+}
+
+.label {
+  padding-inline: space(3) space(2);
+  color: color(inverse-muted);
+}
+
+.item {
+  display: grid;
+  place-items: center;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding-inline: space(3);
+  border-radius: radius(full);
+
+  @include transition(background-color);
+
+  @include hover {
+    background-color: color(inverse-surface);
+  }
+}
+
+.active {
+  color: color(on-highlight);
+  background-color: color(highlight);
+
+  @include hover {
+    background-color: color(highlight-hover);
+  }
+}

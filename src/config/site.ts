@@ -50,10 +50,10 @@ export const siteConfig = {
     region: "MG",
     postalCode: "35180-002",
   } as Practice | null,
-  /** Foto principal (coloque em /public). Sem foto, aparece um placeholder. */
+  /** Retrato do topo, recortado com fundo transparente (coloque em /public). Sem foto, o topo fica sem retrato. */
   portrait: {
-    src: "/images/rachel-retrato-bracos-cruzados.jpg",
-    alt: "Rachel Campos Ornelas, médica residente em Anestesiologia",
+    src: "/images/rachel-jaleco-bracos-cruzados.webp",
+    alt: "Rachel Campos Ornelas de jaleco, de braços cruzados",
   } as Photo | null,
   /*
    * Demais fotos. Todas opcionais: sem foto, o bloco some ou se ajusta.

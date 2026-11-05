@@ -1,0 +1,39 @@
+@use "abstracts" as *;
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    translate: 0 space(4);
+  }
+}
+
+@keyframes rise-visible {
+  from {
+    translate: 0 space(4);
+  }
+}
+
+@mixin intro($delay: 0s, $name: rise) {
+  @include motion-safe {
+    animation: $name 0.8s ease(out) $delay both;
+  }
+}
+
+@mixin hero-section {
+  position: relative;
+  overflow: clip;
+  background-color: color(field);
+}
+
+@mixin trace {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin credential {
+  font-size: font-size(sm);
+  font-weight: font-weight(medium);
+  font-variant-numeric: tabular-nums;
+  color: color(fg-muted);
+}

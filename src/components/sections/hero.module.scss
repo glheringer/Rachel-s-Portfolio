@@ -15,145 +15,322 @@
   }
 }
 
-@keyframes settle {
-  from {
-    scale: 1.06;
-  }
-}
-
 @mixin intro($delay: 0s, $name: rise) {
   @include motion-safe {
     animation: $name 0.8s ease(out) $delay both;
   }
 }
 
-// Campo claro com a capnografia correndo na base, de ponta a ponta.
 .hero {
   position: relative;
   overflow: clip;
   background-color: color(field);
 }
 
-// Celular e tablet: texto e, embaixo, o retrato.
-// Desktop: texto à esquerda, retrato à direita.
-// O padding de baixo deixa o traçado livre, abaixo do retrato.
 .stage {
-  display: grid;
-  gap: space(12);
-  padding-block: space(12) space(20);
+  padding-block: space(6) space(12);
 
-  @include mq(md) {
-    padding-top: space(16);
-  }
-
-  // Desktop: o topo inteiro cabe na tela (com a capnografia na base),
-  // para a animação aparecer já no carregamento.
   @include mq(lg) {
-    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-    gap: space(12);
-    align-items: center;
-    padding-block: space(8) space(20);
+    padding-block: space(4) space(10);
   }
 }
 
-.copy {
+.board {
+  position: relative;
   display: grid;
   gap: space(6);
-  justify-items: start;
-  max-width: 40rem;
+  view-timeline-name: --hero-name;
 
   @include mq(lg) {
-    gap: space(5);
+    container-type: inline-size;
+    display: block;
+    isolation: isolate;
+    aspect-ratio: 100 / 64;
   }
 }
 
-.title {
+.band {
+  position: relative;
   display: grid;
   gap: space(3);
-
-  @include mq(lg) {
-    gap: space(2);
-  }
+  align-content: start;
+  padding: space(6);
+  overflow: hidden;
+  color: color(on-accent);
+  background-color: color(accent);
+  border-radius: radius(xl);
 
   @include intro(0s, rise-visible);
 
-  // Linha do tempo que o header usa para mostrar a marca quando o título sai
-  // da tela (ver site-header.module.scss e timeline-scope em _global.scss).
-  view-timeline-name: --hero-name;
+  @include mq(lg) {
+    position: absolute;
+    inset: 0 0 auto;
+    z-index: 0;
+    height: 22cqi;
+    padding: 3.5cqi 3cqi;
+    border-radius: 2.5cqi;
+  }
 }
 
-// Nome menor, na serifada itálica da marca do header.
+.bandTrace {
+  position: absolute;
+  bottom: space(3);
+  left: 0;
+  color: color(inverse-border);
+}
+
+.title {
+  position: relative;
+  display: grid;
+  gap: space(1);
+  color: color(on-accent);
+}
+
 .name {
   font-family: token(font, family-serif);
   font-size: font-size("2xl");
   font-style: italic;
   font-weight: font-weight(medium);
   line-height: token(font, leading-snug);
-  color: color(fg-muted);
+}
+
+.role {
+  font-size: font-size(md);
+  font-weight: font-weight(semibold);
+  color: color(inverse-muted);
+}
+
+.place,
+.credential {
+  position: relative;
+  display: flex;
+  gap: space(2);
+  align-items: center;
+  font-size: font-size(sm);
+  font-weight: font-weight(medium);
+  color: color(inverse-muted);
+}
+
+.credential {
+  font-variant-numeric: tabular-nums;
 }
 
 .srOnly {
   @include visually-hidden;
 }
 
-// O destaque: a atuação, grande e em negrito.
-.role {
-  @include text(display);
-
+.slogan {
+  display: grid;
+  order: 2;
+  font-family: token(font, family-display);
+  font-size: clamp(2.75rem, 14vw, 5.5rem);
+  font-weight: font-weight(extrabold);
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: token(font, tracking-tighter);
   color: color(heading);
-  text-wrap: balance;
 
   @include mq(lg) {
-    font-size: font-size(hero);
+    display: block;
+    font-size: 8.2cqi;
   }
 }
 
-// Texto corrido na cor cheia: cinza fica com cara de rascunho.
-.lead {
-  @include text(lead);
-  @include intro(0.1s);
+%word {
+  white-space: nowrap;
 
+  @include intro(0.05s, rise-visible);
+
+  @include mq(lg) {
+    position: absolute;
+    z-index: 1;
+  }
+}
+
+.w1 {
+  @extend %word;
+
+  @include mq(lg) {
+    top: 6cqi;
+    left: 60cqi;
+    color: color(on-accent);
+  }
+}
+
+.w2 {
+  @extend %word;
+
+  @include mq(lg) {
+    top: 24.5cqi;
+    left: 1cqi;
+  }
+}
+
+.w3 {
+  @extend %word;
+
+  @include mq(lg) {
+    top: 40cqi;
+    left: 63.5cqi;
+  }
+}
+
+.note {
+  @include text(body);
+  @include intro(0.15s);
+
+  display: flex;
+  gap: space(3);
+  align-items: flex-start;
+  order: 4;
   max-width: 34rem;
   color: color(fg);
+
+  @include mq(lg) {
+    position: absolute;
+    top: 25cqi;
+    left: 67cqi;
+    z-index: 1;
+    width: 30cqi;
+    font-size: font-size(sm);
+    line-height: token(font, leading-normal);
+  }
 }
 
-.actions {
+.noteIcon {
+  flex-shrink: 0;
+  margin-top: 0.2em;
+  color: color(highlight-line);
+}
+
+%rule {
+  display: none;
+
+  @include mq(lg) {
+    position: absolute;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: token(border, width-thin);
+    background-color: color(border);
+  }
+}
+
+.rule1 {
+  @extend %rule;
+
+  top: 37cqi;
+}
+
+.rule2 {
+  @extend %rule;
+
+  top: 53cqi;
+}
+
+%thumb {
+  display: none;
+
+  @include mq(lg) {
+    position: absolute;
+    z-index: 1;
+    display: block;
+    height: 10.5cqi;
+    overflow: hidden;
+    border-radius: 1.2cqi;
+
+    @include intro(0.25s);
+  }
+}
+
+.thumbLeft {
+  @extend %thumb;
+
+  top: 40cqi;
+  left: 2cqi;
+  width: 17cqi;
+}
+
+.thumbRight {
+  @extend %thumb;
+
+  top: 55.5cqi;
+  left: 80cqi;
+  width: 17cqi;
+}
+
+.thumbImage {
+  object-fit: cover;
+}
+
+.stat {
   display: flex;
-  flex-wrap: wrap;
   gap: space(3);
+  align-items: center;
+  order: 6;
 
-  @include intro(0.2s);
+  @include intro(0.25s);
+
+  @include mq(lg) {
+    position: absolute;
+    top: 57cqi;
+    left: 2cqi;
+    z-index: 1;
+  }
 }
 
-.credential {
+.statValue {
+  @include text(stat);
+
+  color: color(heading);
+}
+
+.statLabel {
+  max-width: 9rem;
   font-size: font-size(sm);
   font-weight: font-weight(medium);
-  font-variant-numeric: tabular-nums;
+  line-height: token(font, leading-snug);
   color: color(fg-muted);
 }
 
-.portrait {
-  position: relative;
-  z-index: z(raised);
-  justify-self: center;
-  width: min(100%, 24rem);
+.cta {
+  order: 5;
+  justify-self: start;
 
-  // No desktop, a altura da foto acompanha a da tela (4:5 → largura = 80% da altura).
+  @include intro(0.2s);
+
   @include mq(lg) {
-    justify-self: end;
-    width: min(100%, 28rem, (100svh - token(header, height) - space(8) - space(20)) * 0.8);
-  }
+    position: absolute;
+    top: 57cqi;
+    left: 50cqi;
+    z-index: 3;
 
-  // A foto "assenta" no quadro: leve aproximação que se desfaz.
-  img {
-    @include motion-safe {
-      animation: settle 1.6s ease(out) both;
-    }
+    // transform, e não translate: o translate é da animação de entrada.
+    transform: translateX(-50%);
   }
 }
 
-.trace {
-  position: absolute;
-  bottom: 0;
-  left: 0;
+.photo {
+  position: relative;
+  order: 3;
+  justify-self: center;
+  width: min(70%, 18rem);
+  aspect-ratio: 721 / 1600;
+  mask-image: linear-gradient(to bottom, #{color(fg)} 78%, transparent);
+
+  @include intro(0.1s, rise-visible);
+
+  @include mq(lg) {
+    position: absolute;
+    top: 6cqi;
+    left: 37.5cqi;
+    z-index: 2;
+    width: 25cqi;
+  }
+}
+
+.photoImage {
+  object-fit: contain;
+  object-position: bottom;
 }

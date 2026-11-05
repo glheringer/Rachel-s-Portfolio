@@ -29,6 +29,9 @@ export const hero = {
     { icon: ChartLine, title: "Pesquisa em epidemiologia" },
   ],
   floatingCard: { title: "Residência — R3", description: "Anestesiologia · Hospital Márcio Cunha" },
+  /** Frase em letras grandes ao redor do retrato, em três partes. */
+  slogan: ["Cuidado", "em cada", "respiro"],
+  note: "Residência em Anestesiologia no Hospital Márcio Cunha, com pesquisa em epidemiologia e medicina baseada em evidências.",
 }
 
 export const about = {

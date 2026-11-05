@@ -1,0 +1,66 @@
+@use "abstracts" as *;
+
+.wrapper {
+  display: grid;
+  gap: space(6);
+  padding-block: space(16) space(24);
+}
+
+.title {
+  @include text(h1);
+
+  color: color(heading);
+}
+
+.lead {
+  @include text(lead);
+
+  max-width: 36rem;
+  color: color(fg);
+}
+
+.list {
+  display: grid;
+  gap: space(4);
+  margin-top: space(4);
+
+  @include mq(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  position: relative;
+  display: grid;
+  gap: space(2);
+  height: 100%;
+  padding: space(6) space(16) space(6) space(6);
+  background-color: color(surface);
+  border-radius: radius(lg);
+
+  @include lift;
+}
+
+.number {
+  font-size: font-size(sm);
+  font-weight: font-weight(bold);
+  color: color(action-fg);
+}
+
+.cardTitle {
+  @include text(h3);
+
+  color: color(heading);
+}
+
+.cardText {
+  color: color(fg);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  right: space(6);
+  color: color(action);
+  translate: 0 -50%;
+}

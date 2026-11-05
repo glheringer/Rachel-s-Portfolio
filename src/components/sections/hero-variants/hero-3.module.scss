@@ -1,0 +1,177 @@
+@use "abstracts" as *;
+@use "shared" as *;
+
+.hero {
+  @include hero-section;
+}
+
+.burst {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 7rem;
+  color: color(tint-strong);
+  translate: -50% 0;
+}
+
+.stage {
+  position: relative;
+  display: grid;
+  gap: space(12);
+  align-items: center;
+  padding-block: space(16) space(20);
+
+  @include mq(lg) {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: space(16);
+    padding-block: space(12) space(20);
+  }
+}
+
+.figure {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 28rem);
+  aspect-ratio: 1 / 1.05;
+  view-timeline-name: --hero-name;
+}
+
+.disc {
+  position: absolute;
+  inset: auto 4% 0;
+  aspect-ratio: 1;
+  background-color: color(tint);
+  border-radius: radius(full);
+}
+
+.photo {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: auto;
+  height: 96%;
+  translate: -50% 0;
+
+  // A foto sobe de dentro do círculo: animamos o scale, o translate centraliza.
+  @include motion-safe {
+    animation: grow 1s ease(out) both;
+  }
+}
+
+@keyframes grow {
+  from {
+    opacity: 0;
+    scale: 0.94;
+  }
+}
+
+%card {
+  position: absolute;
+  z-index: z(raised);
+  display: flex;
+  gap: space(3);
+  align-items: center;
+  padding: space(3) space(4);
+  background-color: color(surface-raised);
+  border-radius: radius(md);
+  box-shadow: shadow(md);
+}
+
+.cardLeft {
+  @extend %card;
+  @include intro(0.3s);
+
+  bottom: 14%;
+  left: -2%;
+  max-width: 15rem;
+}
+
+.cardRight {
+  @extend %card;
+  @include intro(0.4s);
+
+  right: -2%;
+  bottom: 2%;
+  max-width: 12rem;
+}
+
+.cardTitle {
+  font-size: font-size(sm);
+  font-weight: font-weight(bold);
+  color: color(heading);
+}
+
+.cardText {
+  font-size: font-size(xs);
+  font-weight: font-weight(medium);
+  line-height: token(font, leading-snug);
+  color: color(fg-muted);
+}
+
+.cardValue {
+  @include text(stat);
+
+  color: color(heading);
+}
+
+.copy {
+  display: grid;
+  gap: space(5);
+  justify-items: start;
+  max-width: 36rem;
+}
+
+.title {
+  display: grid;
+  gap: space(2);
+
+  @include intro(0s, rise-visible);
+}
+
+.name {
+  @include text(h1);
+
+  color: color(heading);
+  text-wrap: balance;
+}
+
+.nameIcon {
+  margin-left: space(3);
+  color: color(highlight-line);
+  vertical-align: 0.15em;
+}
+
+.role {
+  @include text(h3);
+
+  color: color(action-fg);
+}
+
+.srOnly {
+  @include visually-hidden;
+}
+
+.text {
+  @include text(body);
+  @include intro(0.1s);
+
+  color: color(fg);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: space(4) space(6);
+  align-items: center;
+  margin-top: space(2);
+
+  @include intro(0.2s);
+}
+
+.credential {
+  @include credential;
+}
+
+.trace {
+  @include trace;
+}
